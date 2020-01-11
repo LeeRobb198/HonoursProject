@@ -1,0 +1,26 @@
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #FFFFFF;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 55px;
+  text-align: center;
+  background: #3B4990;
+  color: white;
+  font-size: 30px;
+}
+
+#map {
+    height: 500px;
+    /* width: 100%; */
+    /* height: 180px;
+    background: yellow; */
+}
+
+#map_container {
+  padding: 3%;
+}
