@@ -1,3 +1,8 @@
+// Imports
+
+// import Airplane from "plane-icon.jpeg";
+
+
 // Creates map -----------------------------------------------------------------
 
 var map = L.map('map', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
@@ -39,3 +44,9 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// API -------------------------------------------------------------------------
+//
+// var allFlights = "https://opensky-network.org/api/states/all";
+//
+// console.log(allFlights);
