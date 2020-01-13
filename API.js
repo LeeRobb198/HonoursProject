@@ -2,91 +2,96 @@
 
 var url = "https://opensky-network.org/api/states/all";
 
-//function getResult(urlPassed) {
+// Return All States -----------------------------------------------------------
 
-// Return All States
+// $.getJSON( url , function(data) {
+//
+//     //Returns all states to the console
+//     console.log("First console");
+//     console.log(data);
+//
+//     console.log(data.states.length);
+//
+//     // var test = [];
+//     // test[0] = data.time;
+//     // test[1] = data.states[0];
+//     //
+//     // console.log(test);
+//
+//     // Returns 1 states first value
+//     //console.log(data.states[0][2]);
+// });
+
+// Return Specific States ------------------------------------------------------
 
 $.getJSON( url , function(data) {
-
-    //Returns all states to the console
-    console.log(data);
-
-    console.log(data.states.length);
-
-    // var test = [];
-    // test[0] = data.time;
-    // test[1] = data.states[0];
-    //
-    // console.log(test);
-
-    // Returns 1 states first value
-    //console.log(data.states[0][2]);
-});
-
-// Return specific states
-
-$.getJSON( url , function(data) {
-
-  //var test = filterByProperty(data, "United States");
-
 
     var result = [];
-    var resultStates = [];
-    //var resObj = JSON.parse(data);
-    //var count = 0;
+    var newData = [];
+    var newArray = [];
+    var testArray = [];
 
     result['times'] = data.time;
 
+    var icao24, callsign, origin_country, time_position, last_contact,
+        longitude, latitude, baro_altitude, on_ground, velocity,
+        true_track, vertical_rate, sensors, geo_altitude, squawk,
+        spi, position_source;
+
     for(var i = 0; i < data.states.length; i++) {
-      //for(var j = 0; j < 16; j++) {
-        if(data.states[i][2] == 'United States') {
-            for(var j = 0; j < data.states.length; j++) {
-              console.log(data.states[j]);
-              //result['times'] = data.time;
-              // resultStates = data.states[j];
-              // //result['states'] = data.states[i];
-              // result['states'] = resultStates;
-            }
-          }
-      //console.log(count);
+      if(data.states[i][2] == 'United States') {
+        icao24 = data.states[i][0];
+        callsign = data.states[i][1];
+        origin_country = data.states[i][2];
+        time_position = data.states[i][3];
+        last_contact = data.states[i][4];
+        longitude = data.states[i][5];
+        latitude = data.states[i][6];
+        baro_altitude = data.states[i][7];
+        on_ground = data.states[i][8];
+        velocity = data.states[i][9];
+        true_track = data.states[i][10];
+        vertical_rate = data.states[i][11];
+        sensors = data.states[i][12];
+        geo_altitude = data.states[i][13];
+        squawk = data.states[i][14];
+        spi = data.states[i][15];
+        position_source = data.states[i][16];
+
+        newData = [icao24, callsign, origin_country, time_position, last_contact,
+            longitude, latitude, baro_altitude, on_ground, velocity,
+            true_track, vertical_rate, sensors, geo_altitude, squawk,
+            spi, position_source];
+
+        newArray.push(newData);
+
+        if(latitude !== null && longitude !== null) {
+          L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
+        }
+        //testArray.push(data.states[i][2]);
+      }
+
     }
-    //console.log(result[0].length);
+
+    result['states'] = newArray;
+    console.log("Third console");
     console.log(result);
+
+    //console.log("Countries");
+    //console.log(testArray);
+
 });
 
+// Icon ------------------------------------------------------------------------
 
+var planeIcon = L.icon({
+    iconUrl: 'planeIcon2.svg',
 
+    iconSize:     [15, 60], // size of the icon
+    //iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
-// function filterByProperty(array, prop){
-//     var filtered = [];
-//     for(var i = 0; i < array.states.length; i++){
-//
-//         var obj = array.states[i];
-//
-//         for(var key in obj){
-//             if(array.states[i][2] == 'United States'){
-//                 var item = obj[key];
-//                 filtered.push(item);
-//             }
-//         }
-//
-//     }
-//     console.log(filtered);
-//     return filtered;
-// }
+// Add Markers -----------------------------------------------------------------
 
-
-//result = getResult(url);
-
-//console.log("Result: " + result);
-
-// var response = '{ "9994921432": { "name": "the name", "ownerid": "543624" }, "9979509360": { "name": "some name", "ownerid": "765875" }, "9979524523": { "name": "some name", "ownerid": "215654" }, "9979524524": { "name": "some other name", "ownerid": "65893" } }';
-// var json = [];
-// var resObj = JSON.parse(response);
-// for(var key in resObj) {
-//   if(resObj[key].name == 'some name') {
-//     json.push(resObj[key]);
-//   }
-// }
-//
-// console.log(json);
+// L.marker([51.5, -0.09], {icon: planeIcon}).addTo(map);
