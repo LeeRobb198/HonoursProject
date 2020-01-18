@@ -68,7 +68,14 @@ $("#showTest").click(function(){
           newArray.push(newData);
 
           if(latitude !== null && longitude !== null) {
-            L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
+            // L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
+            L.marker([latitude, longitude], {icon: planeIcon}).addTo(map)
+            .bindPopup( "Flight Data" +
+                        "\nICAO 24-bit Address: " + icao24 +
+                        "\nOrigin Country: " + origin_country +
+                        "\nLatitude: " + latitude +
+                        "\nLongitude: " + longitude +
+                        "\nVelocity: " + velocity).openPopup();
           }
           //testArray.push(data.states[i][2]);
         }

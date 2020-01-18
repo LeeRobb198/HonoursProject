@@ -30,12 +30,12 @@ map.on('drag', function() {
 map.locate({setView: true, maxZoom: 16});
 
 function onLocationFound(e) {
-    //var radius = e.accuracy;
+    var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(map)
-        //.bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-    //L.circle(e.latlng, radius).addTo(map);
+    L.circle(e.latlng, radius).addTo(map);
 }
 
 function onLocationError(e) {
