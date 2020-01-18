@@ -12,12 +12,6 @@ var url = "https://opensky-network.org/api/states/all";
 
       console.log(data.states.length);
 
-      // var test = [];
-      // test[0] = data.time;
-      // test[1] = data.states[0];
-      //
-      // console.log(test);
-
       // Returns 1 states first value
       //console.log(data.states[0][2]);
   });
@@ -77,7 +71,6 @@ $("#showTest").click(function(){
                         "\nLongitude: " + longitude +
                         "\nVelocity: " + velocity).openPopup();
           }
-          //testArray.push(data.states[i][2]);
         }
 
       }
@@ -85,10 +78,6 @@ $("#showTest").click(function(){
       result['states'] = newArray;
       console.log("Third console");
       console.log(result);
-
-      //console.log("Countries");
-      //console.log(testArray);
-
   });
 });
 
@@ -96,12 +85,6 @@ $("#showTest").click(function(){
 
 var planeIcon = L.icon({
     iconUrl: 'planeIcon2.svg',
-
     iconSize:     [15, 60], // size of the icon
-    //iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
-
-// Add Markers -----------------------------------------------------------------
-
-// L.marker([51.5, -0.09], {icon: planeIcon}).addTo(map);
