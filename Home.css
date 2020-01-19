@@ -24,3 +24,7 @@ body {
 #map_container {
   padding: 3%;
 }
+
+#parameter_container {
+  background-color: yellow;
+}
