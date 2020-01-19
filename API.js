@@ -20,6 +20,7 @@ var url = "https://opensky-network.org/api/states/all";
 // Return Specific States (Leaflet Map) ----------------------------------------
 
 $("#showTest").click(function(){
+  console.log("Click registered");
   $.getJSON( url , function(data) {
 
       var result = [];
