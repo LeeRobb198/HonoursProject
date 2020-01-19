@@ -17,7 +17,7 @@ var url = "https://opensky-network.org/api/states/all";
   });
 //});
 
-// Return Specific States ------------------------------------------------------
+// Return Specific States (Leaflet Map) ----------------------------------------
 
 $("#showTest").click(function(){
   $.getJSON( url , function(data) {
@@ -64,12 +64,12 @@ $("#showTest").click(function(){
           if(latitude !== null && longitude !== null) {
             // L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
             L.marker([latitude, longitude], {icon: planeIcon}).addTo(map)
-            .bindPopup( "Flight Data" +
-                        "\nICAO 24-bit Address: " + icao24 +
-                        "\nOrigin Country: " + origin_country +
-                        "\nLatitude: " + latitude +
-                        "\nLongitude: " + longitude +
-                        "\nVelocity: " + velocity).openPopup();
+            .bindPopup( "<b>Flight Data</b>" +
+                        "<br>ICAO 24-bit Address: " + icao24 +
+                        "<br>Origin Country: " + origin_country +
+                        "<br>Latitude: " + latitude +
+                        "<br>Longitude: " + longitude +
+                        "<br>Velocity: " + velocity).openPopup();
           }
         }
 

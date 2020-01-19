@@ -8,13 +8,12 @@
     <title> Flight Tracking Test Web App </title>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="WebGL.css">
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <!-- WebGL -->
+    <script src="http://www.webglearth.com/v2/api.js"></script>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <!-- <script src="WebGLInitialize.js"></script> -->
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,22 +22,19 @@
 
 <!-- Body ---------------------------------------------->
 
-  <body>
-    <div class="header">
-      <h1> Flight Tracking Test Web App </h1>
-    </div>
+  <body onload="initialize()">
 
-    <div class="buttonGroup">
+    <!-- <div class="buttonGroup">
 				<button class="buttonStyle" id="showTest" type="submit">Show Test (US)</button>
-		</div>
+		</div> -->
 
-    <section id="map_container">
-      <div id="map_2D"></div>
+    <section>
+      <div id="map_3D"></div>
     </section>
 
       <!-- Script -->
-      <script src="Map.js"></script>
-      <script src="API.js"></script>
+      <script src="WebGLInitialize.js"></script>
+      <script src="WebGL.js"></script>
 
   </body>
 </html>
