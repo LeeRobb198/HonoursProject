@@ -16,9 +16,7 @@ body {
 
 #map_2D {
     height: 500px;
-    /* width: 100%; */
-    /* height: 180px;
-    background: yellow; */
+    width: 100%;
 }
 
 #map_container {
@@ -52,4 +50,11 @@ body {
   border: 2px solid #3B4990;
   color: #3B4990;
   border-radius: 4px;
+}
+
+#parameter_container {
+  padding: 3%;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
 }
