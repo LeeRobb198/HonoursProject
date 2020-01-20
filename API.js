@@ -274,8 +274,6 @@ var url = "https://opensky-network.org/api/states/all";
         }
       }
 
-
-
       console.log("Complete");
 
       // Returns 1 states first value

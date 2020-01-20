@@ -79,6 +79,7 @@ function initialize() {
 
           });
         }, 10000); // Updates every 10 seconds
+  
         // Icon ----------------------------------------------------------------
 
       //   var planeIcon = L.icon({

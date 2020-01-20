@@ -68,7 +68,7 @@
 //
 //
 // // Icon ------------------------------------------------------------------------
-// 
+//
 // // var planeIcon = WE.icon({
 // //     iconUrl: 'planeIcon2.svg',
 // //     iconSize:     [15, 60], // size of the icon
