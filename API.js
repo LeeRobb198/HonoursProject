@@ -2,6 +2,10 @@
 
 var url = "https://opensky-network.org/api/states/all";
 
+// Plane Layer
+
+var planeLayer = L.layerGroup().addTo(map);
+
 // Return All States -----------------------------------------------------------
 //$("#showTest").click(function(){
   $.getJSON( url , function(data) {
@@ -169,7 +173,7 @@ var url = "https://opensky-network.org/api/states/all";
           unitedKingdom++;
         } else if(data.states[i][2] == 'Switzerland') {
           unitedKingdom++;
-        } else if(data.states[i][2] == 'Lao People&#39;s Democratic Republic') {
+        } else if(data.states[i][2] == "Lao People's Democratic Republic") {
           unitedKingdom++;
         } else if(data.states[i][2] == 'Dominican Republic') {
           unitedKingdom++;
@@ -267,6 +271,32 @@ var url = "https://opensky-network.org/api/states/all";
           unitedKingdom++;
         } else if(data.states[i][2] == 'Syrian Arab Republic') {
           unitedKingdom++;
+        } else if(data.states[i][2] == 'Zimbabwe') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Rwanda') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'United Republic of Tanzania') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Suriname') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == "Côte d'Ivoire") {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Kyrgyzstan') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Cyprus') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Botswana') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Namibia') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Malawi') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Saint Vincent and the Grenadines') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Niger') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Swaziland') {
+          unitedKingdom++;
         }
 
         else {
@@ -281,11 +311,17 @@ var url = "https://opensky-network.org/api/states/all";
   });
 //});
 
-// Return Specific States (Leaflet Map) ----------------------------------------
+// Search Function -------------------------------------------------------------
 
-$("#showTest").click(function(){
+$("#searchButton").click(function(){
   console.log("Click registered");
   $.getJSON( url , function(data) {
+
+      var e = document.getElementById("dropdownCountries");
+      var chosenCountry = e.options[e.selectedIndex].value;
+
+      console.log("Chosen Country:")
+      console.log(chosenCountry);
 
       var result = [];
       var newData = [];
@@ -300,7 +336,7 @@ $("#showTest").click(function(){
           spi, position_source;
 
       for(var i = 0; i < data.states.length; i++) {
-        if(data.states[i][2] == 'United States') {
+        if(data.states[i][2] == chosenCountry) {
           icao24 = data.states[i][0];
           callsign = data.states[i][1];
           origin_country = data.states[i][2];
@@ -328,7 +364,7 @@ $("#showTest").click(function(){
 
           if(latitude !== null && longitude !== null) {
             // L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
-            L.marker([latitude, longitude], {icon: planeIcon}).addTo(map)
+            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer)
             .bindPopup( "<b>Flight Data</b>" +
                         "<br>ICAO 24-bit Address: " + icao24 +
                         "<br>Origin Country: " + origin_country +
@@ -344,6 +380,13 @@ $("#showTest").click(function(){
       console.log("Third console");
       console.log(result);
   });
+});
+
+// Clear Function --------------------------------------------------------------
+
+$("#clearButton").click(function(){
+    // map.clearLayers();
+    planeLayer.clearLayers();
 });
 
 // Icon ------------------------------------------------------------------------
