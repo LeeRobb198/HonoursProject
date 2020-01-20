@@ -1,9 +1,13 @@
+// Imports
+
+// import Airplane from "plane-icon.jpeg";
+
+
 // Creates map -----------------------------------------------------------------
 
-var map = L.map('map', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
+var map = L.map('map_2D', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     accessToken: 'pk.eyJ1IjoibGVlcm9iYjE5OCIsImEiOiJjazU3ZGIwam8wMDlxM2VxaDg3cmRjc3FnIn0.ZvgcqlYYmrcZjfinLqY1rA'
@@ -39,3 +43,9 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// API -------------------------------------------------------------------------
+//
+// var allFlights = "https://opensky-network.org/api/states/all";
+//
+// console.log(allFlights);
