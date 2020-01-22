@@ -30,7 +30,7 @@
 
     <div class="buttonGroup">
 				<button class="buttonStyle" id="searchButton" type="submit">Search</button>
-        <button class="buttonStyle" id="clearButton" type="submit">Clear Markers</button>
+        <button class="buttonStyle" id="clearButton" type="submit">Clear Search</button>
 		</div>
 
     <section id="map_container">
@@ -67,6 +67,7 @@
             <option value="Brazil">Brazil</option>
             <option value="Brunei Darussalam">Brunei Darussalam</option>
             <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
             <!-- C -->
             <option value="Cambodia">Cambodia</option>
             <option value="Canada">Canada</option>
@@ -171,6 +172,7 @@
             <option value="Singapore">Singapore</option>
             <option value="Slovakia">Slovakia</option>
             <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
             <option value="South Africa">South Africa</option>
             <option value="Spain">Spain</option>
             <option value="Sri Lanka">Sri Lanka</option>
@@ -204,6 +206,18 @@
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
 
+          <!-- On ground dropdown ////////////////////////////////////////// -->
+          Search for planes on the ground: <input type="checkbox" id="onGroundCheck">
+
+          <!-- Min altitude slider -->
+          <div class="slidecontainer">
+            <input type="range" min="0" max="50000" value="25000" class="slider" id="minSlider">
+          </div>
+
+          <!-- <select id="dropdownOnGround">
+            <option value=false>In Flight</option>
+            <option value=true>On Ground</option>
+          </select> -->
 
           <!-- <div class="dropdown">
             <button onclick="dropdownFunction()" class="dropbtn"> Countries </button>

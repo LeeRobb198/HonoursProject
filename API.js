@@ -7,6 +7,7 @@ var url = "https://opensky-network.org/api/states/all";
 var planeLayer = L.layerGroup().addTo(map);
 
 // Return All States -----------------------------------------------------------
+
 //$("#showTest").click(function(){
   $.getJSON( url , function(data) {
 
@@ -297,6 +298,11 @@ var planeLayer = L.layerGroup().addTo(map);
           unitedKingdom++;
         } else if(data.states[i][2] == 'Swaziland') {
           unitedKingdom++;
+        } else if(data.states[i][2] == 'Solomon Islands') {
+          unitedKingdom++;
+        }
+        else if(data.states[i][2] == 'Burkina Faso') {
+          unitedKingdom++;
         }
 
         else {
@@ -311,17 +317,35 @@ var planeLayer = L.layerGroup().addTo(map);
   });
 //});
 
-// Search Function -------------------------------------------------------------
+// Refresh Data Function -------------------------------------------------------
 
-$("#searchButton").click(function(){
-  console.log("Click registered");
+function refreshData() {
+
   $.getJSON( url , function(data) {
 
-      var e = document.getElementById("dropdownCountries");
-      var chosenCountry = e.options[e.selectedIndex].value;
+      // Clears all flights on plane layer
+      planeLayer.clearLayers();
 
+      // Get chosen country from dropdown
+      var cc = document.getElementById("dropdownCountries");
+      var chosenCountry = cc.options[cc.selectedIndex].value;
+
+      // Get on ground parameter from dropdown
+      // var og = document.getElementById("dropdownOnGround");
+      // var onGround = og.options[og.selectedIndex].value;
+
+      var onGround = document.getElementById("onGroundCheck").checked;
+
+      // Get minimum slider value
+      var minSlider = document.getElementById("minSlider").value;
+
+      // Console logs of parameters
       console.log("Chosen Country:")
       console.log(chosenCountry);
+      console.log("On Ground:")
+      console.log(onGround);
+      console.log("Minimum Slider:");
+      console.log(minSlider);
 
       var result = [];
       var newData = [];
@@ -336,7 +360,7 @@ $("#searchButton").click(function(){
           spi, position_source;
 
       for(var i = 0; i < data.states.length; i++) {
-        if(data.states[i][2] == chosenCountry) {
+        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround)) {
           icao24 = data.states[i][0];
           callsign = data.states[i][1];
           origin_country = data.states[i][2];
@@ -363,14 +387,16 @@ $("#searchButton").click(function(){
           newArray.push(newData);
 
           if(latitude !== null && longitude !== null) {
-            // L.marker([latitude, longitude], {icon: planeIcon}).addTo(map);
-            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer)
-            .bindPopup( "<b>Flight Data</b>" +
-                        "<br>ICAO 24-bit Address: " + icao24 +
-                        "<br>Origin Country: " + origin_country +
-                        "<br>Latitude: " + latitude +
-                        "<br>Longitude: " + longitude +
-                        "<br>Velocity: " + velocity).openPopup();
+            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer);
+            // .bindPopup( "<b>Flight Data</b>" +
+            //             "<br>ICAO 24-bit Address: " + icao24 +
+            //             "<br>Call Sign: " + callsign +
+            //             "<br>Origin Country: " + origin_country +
+            //             "<br>Latitude: " + latitude +
+            //             "<br>Longitude: " + longitude +
+            //             "<br>Velocity: " + velocity +
+            //             "<br>Altitude: " + baro_altitude +
+            //             "<br>On Ground: " + on_ground).openPopup();
           }
         }
 
@@ -380,13 +406,20 @@ $("#searchButton").click(function(){
       console.log("Third console");
       console.log(result);
   });
-});
+}
 
-// Clear Function --------------------------------------------------------------
+// Search Button ---------------------------------------------------------------
 
-$("#clearButton").click(function(){
-    // map.clearLayers();
-    planeLayer.clearLayers();
+$("#searchButton").click(function(){
+  console.log("Click registered");
+  var timeOut = setInterval(refreshData, 10000);
+
+  // Clear Function
+
+  $("#clearButton").click(function(){
+      planeLayer.clearLayers();
+      clearInterval(timeOut);
+  });
 });
 
 // Icon ------------------------------------------------------------------------
