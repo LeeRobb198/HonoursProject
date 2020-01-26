@@ -455,7 +455,7 @@ $("#searchButton").click(function(){
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
-    iconUrl: 'public/images/planeIcon2.svg',
+    iconUrl: '/images/planeIcon2.svg',
     iconSize:     [15, 60], // size of the icon
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
