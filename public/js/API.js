@@ -23,7 +23,7 @@ var planeLayer = L.layerGroup().addTo(map);
           southAfrica, canada, germany, sweden, brazil, iceland,
           estonia, australia, thailand, unitedKingdom;
 
-      // Finding all countries
+      // Finding all countries ---------------------
 
       for(var i = 0; i < data.states.length; i++) {
         if(data.states[i][2] == 'United States') {
@@ -300,8 +300,19 @@ var planeLayer = L.layerGroup().addTo(map);
           unitedKingdom++;
         } else if(data.states[i][2] == 'Solomon Islands') {
           unitedKingdom++;
-        }
-        else if(data.states[i][2] == 'Burkina Faso') {
+        } else if(data.states[i][2] == 'Burkina Faso') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Madagascar') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Honduras') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Monaco') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Bhutan') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'Ghana') {
+          unitedKingdom++;
+        } else if(data.states[i][2] == 'The former Yugoslav Republic of Macedonia') {
           unitedKingdom++;
         }
 
@@ -309,6 +320,19 @@ var planeLayer = L.layerGroup().addTo(map);
           console.log(data.states[i][2]);
         }
       }
+
+      // Max altitude test ---------------------
+      var maxAltitude = 0;
+
+      for(var i = 0; i < data.states.length; i++) {
+        // if(data.states[i][7] != false) {
+          if(data.states[i][7] > maxAltitude) {
+            maxAltitude = data.states[i][7];
+            // console.log("Max Altitude: " + maxAltitude);
+          }
+        // }
+      }
+      console.log("Max Altitude: " + maxAltitude);
 
       console.log("Complete");
 
@@ -339,13 +363,18 @@ function refreshData() {
       // Get minimum slider value
       var minSlider = document.getElementById("minSlider").value;
 
+      // Get maximum slider value
+      var maxSlider = document.getElementById("maxSlider").value;
+
       // Console logs of parameters
       console.log("Chosen Country:")
       console.log(chosenCountry);
       console.log("On Ground:")
       console.log(onGround);
       console.log("Minimum Slider:");
-      console.log(minSlider);
+      console.log(minSlider * 3.28084);
+      console.log("Maximum Slider:");
+      console.log(maxSlider * 3.28084);
 
       var result = [];
       var newData = [];
@@ -360,7 +389,8 @@ function refreshData() {
           spi, position_source;
 
       for(var i = 0; i < data.states.length; i++) {
-        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround)) {
+        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround) && ((minSlider >= (data.states[i][7] * 3.28084) && ((data.states[i][7] * 3.28084) <= maxSlider)))) {
+        // if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround)) {
           icao24 = data.states[i][0];
           callsign = data.states[i][1];
           origin_country = data.states[i][2];
@@ -387,16 +417,16 @@ function refreshData() {
           newArray.push(newData);
 
           if(latitude !== null && longitude !== null) {
-            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer);
-            // .bindPopup( "<b>Flight Data</b>" +
-            //             "<br>ICAO 24-bit Address: " + icao24 +
-            //             "<br>Call Sign: " + callsign +
-            //             "<br>Origin Country: " + origin_country +
-            //             "<br>Latitude: " + latitude +
-            //             "<br>Longitude: " + longitude +
-            //             "<br>Velocity: " + velocity +
-            //             "<br>Altitude: " + baro_altitude +
-            //             "<br>On Ground: " + on_ground).openPopup();
+            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer)
+            .bindPopup( "<b>Flight Data</b>" +
+                        "<br>ICAO 24-bit Address: " + icao24 +
+                        "<br>Call Sign: " + callsign +
+                        "<br>Origin Country: " + origin_country +
+                        "<br>Latitude: " + latitude +
+                        "<br>Longitude: " + longitude +
+                        "<br>Velocity: " + velocity +
+                        "<br>Altitude: " + baro_altitude +
+                        "<br>On Ground: " + on_ground); //.openPopup();
           }
         }
 
@@ -425,7 +455,7 @@ $("#searchButton").click(function(){
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
-    iconUrl: 'planeIcon2.svg',
+    iconUrl: 'public/images/planeIcon2.svg',
     iconSize:     [15, 60], // size of the icon
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });

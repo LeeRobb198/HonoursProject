@@ -8,7 +8,7 @@
     <title> Flight Tracking Test Web App </title>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="public/css/Home.css">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
@@ -38,11 +38,15 @@
     </section>
 
     <section id="parameter_container">
-      <section id="parameter_inner_container" >
-        <div id ="parameterContent">
+      <section id="parameter_inner_container">
+        <div id ="searchParameters">
           <h1> Search Parameters </h1>
+        </div>
 
-          <!-- Countries dropdown ////////////////////////////////////////// -->
+        <!-- Countries dropdown ////////////////////////////////////////// -->
+
+        <div id ="searchParameters">
+          <h5> Countries </h5>
           <select id="dropdownCountries">
             <!-- A -->
             <option value="Afghanistan">Afghanistan</option>
@@ -62,6 +66,7 @@
             <option value="Barbados">Barbados</option>
             <option value="Belarus">Belarus</option>
             <option value="Belgium">Belgium</option>
+            <option value="Bhutan">Bhutan</option>
             <option value="Bolivia">Bolivia</option>
             <option value="Botswana">Botswana</option>
             <option value="Brazil">Brazil</option>
@@ -95,9 +100,11 @@
             <!-- G -->
             <option value="Georgia">Georgia</option>
             <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
             <option value="Greece">Greece</option>
             <option value="Guatemala">Guatemala</option>
             <!-- H -->
+            <option value="Honduras">Honduras</option>
             <option value="Hungary">Hungary</option>
             <!-- I -->
             <option value="Iceland">Iceland</option>
@@ -125,6 +132,7 @@
             <option value="Lithuania">Lithuania</option>
             <option value="Luxembourg">Luxembourg</option>
             <!-- M -->
+            <option value="Madagascar">Madagascar</option>
             <option value="Malawi">Malawi</option>
             <option value="Malaysia">Malaysia</option>
             <option value="Maldives">Maldives</option>
@@ -132,6 +140,7 @@
             <option value="Mauritania">Mauritania</option>
             <option value="Mauritius">Mauritius</option>
             <option value="Mexico">Mexico</option>
+            <option value="Monaco">Monaco</option>
             <option value="Mongolia">Mongolia</option>
             <option value="Montenegro">Montenegro</option>
             <option value="Morocco">Morocco</option>
@@ -185,6 +194,7 @@
             <option value="Taiwan">Taiwan</option>
             <option value="Tajikistan">Tajikistan</option>
             <option value="Thailand">Thailand</option>
+            <option value="The former Yugoslav Republic of Macedonia">The former Yugoslav Republic of Macedonia</option>
             <option value="Togo">Togo</option>
             <option value="Trinidad and Tobago">Trinidad and Tobago</option>
             <option value="Tunisia">Tunisia</option>
@@ -205,14 +215,32 @@
             <!-- Z -->
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
+        </div>
 
-          <!-- On ground dropdown ////////////////////////////////////////// -->
-          Search for planes on the ground: <input type="checkbox" id="onGroundCheck">
+        <!-- On ground dropdown //////////////////////////////////////////// -->
 
-          <!-- Min altitude slider -->
+        <div id="onGroundParameter">
+          <h5 id="onGroundInline"> Search for planes on the ground </h5>
+          <input type="checkbox" id="onGroundCheck">
+        </div>
+
+        <!-- Min altitude slider /////////////////////////////////////////// -->
+
+        <div id="searchParameters">
+          <h5> Minimum Altitude </h5>
           <div class="slidecontainer">
-            <input type="range" min="0" max="50000" value="25000" class="slider" id="minSlider">
+            <input type="range" min="0" max="40000" value="20000" class="slider" id="minSlider">
           </div>
+        </div>
+
+        <!-- Max altitude slider /////////////////////////////////////////// -->
+
+        <div id="searchParameters">
+          <h5> Maximum Altitude </h5>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="40000" value="20000" class="slider" id="maxSlider">
+          </div>
+        </div>
 
           <!-- <select id="dropdownOnGround">
             <option value=false>In Flight</option>
@@ -228,36 +256,17 @@
           </div> -->
 
 
-        </div>
-
-        <!-- <label for="origin_country_parameter">Origin Country:</label>
-
-        <select id="origin_country_parameter">
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
-        </select>
-
-        <select id="on_ground_parameter">
-            <option value="">--Please choose an option--</option>
-            <option value="dog">True</option>
-            <option value="dog">False</option>
-        </select> -->
-
         <!-- Velocity between 0 m/s and 270 m/s -->
+
       </section>
     </section>
 
     <div class="footer"></div>
 
       <!-- Script -->
-      <script src="Map.js"></script>
-      <script src="API.js"></script>
-      <script src="Dropdown.js"></script>
+      <script src="public/js/Map.js"></script>
+      <script src="public/js/API.js"></script>
+      <script src="public/js/Dropdown.js"></script>
 
   </body>
 </html>

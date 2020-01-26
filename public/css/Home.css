@@ -64,13 +64,13 @@ body {
   border-radius: 4px;
 }
 
-/* Countries Dropdown ------------------------------------------------------- */
+/* Search Parameters Container ---------------------------------------------- */
 
 #parameter_container {
   padding-left: 3%;
   padding-right: 3%;
   padding-bottom: 3%;
-  height: 125px;
+  height: 100%;
   color: white;
 }
 
@@ -80,15 +80,31 @@ body {
   height: 100%;
 }
 
-#parameterContent {
+#searchParameters {
   padding-top: 0.5%;
   padding-left: 3%;
+}
+
+/* Countries Dropdown ------------------------------------------------------- */
+
+
+/* On Ground Checkbox ------------------------------------------------------- */
+
+#onGroundParameter {
+  padding-top: 2%;
+  padding-left: 3%;
+  width: 25%;
+}
+
+#onGroundInline {
+  display: inline;
 }
 
 /* Slider ------------------------------------------------------------------- */
 
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  padding: 10px;
+  width: 20%; /* Width of the outside container */
 }
 
 /* The slider itself */
@@ -96,7 +112,7 @@ body {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
+  height: 15px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -115,8 +131,9 @@ body {
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #4CAF50; /* Green background */
+  background: #3B4990; /* Blue background */
   cursor: pointer; /* Cursor on hover */
+  border-radius: 20px; /* Round thumb */
 }
 
 .slider::-moz-range-thumb {
