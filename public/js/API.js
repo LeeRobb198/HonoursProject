@@ -454,10 +454,17 @@ $("#searchButton").click(function(){
 
 // AR Button -------------------------------------------------------------------
 
-// $("#arPageButton").click(function(){
-//   console.log("Click registered");
-//   location.href="WebGL.html";
-// });
+$("#arPageButton").click(function(){
+  console.log("Click registered");
+  location.href="FlightAR.html";
+});
+
+// WebGL Button ----------------------------------------------------------------
+
+$("#3dPageButton").click(function(){
+  console.log("Click registered");
+  location.href="WebGL.html";
+});
 
 // Icon ------------------------------------------------------------------------
 
