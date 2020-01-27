@@ -452,6 +452,13 @@ $("#searchButton").click(function(){
   });
 });
 
+// AR Button -------------------------------------------------------------------
+
+// $("#arPageButton").click(function(){
+//   console.log("Click registered");
+//   location.href="WebGL.html";
+// });
+
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
