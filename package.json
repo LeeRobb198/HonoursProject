@@ -1,0 +1,22 @@
+{
+  "name": "honoursproject",
+  "version": "1.0.0",
+  "description": "Flight Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeRobb198/HonoursProject.git"
+  },
+  "author": "Lee Robbie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeeRobb198/HonoursProject/issues"
+  },
+  "homepage": "https://github.com/LeeRobb198/HonoursProject#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

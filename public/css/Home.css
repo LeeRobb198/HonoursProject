@@ -1,0 +1,212 @@
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #FFFFFF;
+}
+
+/* Header/Logo Title -------------------------------------------------------- */
+
+.header {
+  padding: 55px;
+  text-align: center;
+  background: #3B4990;
+  color: white;
+  font-size: 30px;
+}
+
+/* Footer ------------------------------------------------------------------- */
+
+.footer {
+  padding: 55px;
+  background: #3B4990;
+}
+
+/* Map ---------------------------------------------------------------------- */
+
+#map_2D {
+    height: 500px;
+    width: 100%;
+}
+
+#map_container {
+  padding: 3%;
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonStyle {
+  background-color: #3B4990;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #3B4990;
+  border-radius: 4px;
+}
+
+.buttonStyle:hover {
+  background-color: #FFFFFF;
+  border: 2px solid #3B4990;
+  color: #3B4990;
+  border-radius: 4px;
+}
+
+/* Search Parameters Container ---------------------------------------------- */
+
+#parameter_container {
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  height: 100%;
+  color: white;
+}
+
+#parameter_inner_container {
+  background-color: #c0c8eb;
+  width: 100%;
+  height: 100%;
+}
+
+#searchParameters {
+  padding-top: 0.5%;
+  padding-left: 3%;
+}
+
+/* Countries Dropdown ------------------------------------------------------- */
+
+
+/* On Ground Checkbox ------------------------------------------------------- */
+
+#onGroundParameter {
+  padding-top: 2%;
+  padding-left: 3%;
+  width: 25%;
+}
+
+#onGroundInline {
+  display: inline;
+}
+
+/* Slider ------------------------------------------------------------------- */
+
+.slidecontainer {
+  padding: 10px;
+  width: 20%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #3B4990; /* Blue background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 20px; /* Round thumb */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* -------- Dropdown Buttons -------- */
+
+/* .dropbtn {
+  background-color: #3B4990;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #FFFFFF;
+  color: #3B4990;
+}
+
+#countriesInput {
+  box-sizing: border-box;
+  background-image: url('searchIcon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#countriesInput:focus {
+  outline: 3px solid #ddd;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  height: 20vh;
+}
+
+.dropdown-content option {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown option:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+} */
+
+/* Second Dropdown */
+
+/* #dropdownCountries {
+  height: 20vh;
+} */
