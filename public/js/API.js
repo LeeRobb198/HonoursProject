@@ -389,7 +389,7 @@ function refreshData() {
           spi, position_source;
 
       for(var i = 0; i < data.states.length; i++) {
-        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround) && ((minSlider >= (data.states[i][7] * 3.28084) && ((data.states[i][7] * 3.28084) <= maxSlider)))) {
+        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround) && (((data.states[i][7] * 3.28084) >= minSlider) && ((data.states[i][7] * 3.28084) <= maxSlider))) {
         // if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround)) {
           icao24 = data.states[i][0];
           callsign = data.states[i][1];
@@ -425,7 +425,7 @@ function refreshData() {
                         "<br>Latitude: " + latitude +
                         "<br>Longitude: " + longitude +
                         "<br>Velocity: " + velocity +
-                        "<br>Altitude: " + baro_altitude +
+                        "<br>Altitude: " + (baro_altitude * 3.280840) +
                         "<br>On Ground: " + on_ground); //.openPopup();
           }
         }
@@ -469,7 +469,7 @@ $("#3dPageButton").click(function(){
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
-    iconUrl: '/images/planeIcon2.svg',
+    iconUrl: 'public/images/planeIcon2.svg',
     iconSize:     [15, 60], // size of the icon
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
