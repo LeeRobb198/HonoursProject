@@ -389,7 +389,7 @@ function refreshData() {
           spi, position_source;
 
       for(var i = 0; i < data.states.length; i++) {
-        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround) && ((minSlider >= (data.states[i][7] * 3.28084) && ((data.states[i][7] * 3.28084) <= maxSlider)))) {
+        if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround) && (((data.states[i][7] * 3.28084) >= minSlider) && ((data.states[i][7] * 3.28084) <= maxSlider))) {
         // if((data.states[i][2] == chosenCountry) && (data.states[i][8] == onGround)) {
           icao24 = data.states[i][0];
           callsign = data.states[i][1];
