@@ -63,12 +63,20 @@ var fs = require('fs')
 var https = require('https')
 var app = express()
 
+app.use(express.static(__dirname + '/public')); // Get the public folder
+app.use(express.static(__dirname)); // Get the other webpages
+
+app.use("/css", express.static("./public/css")); // Get the public folder
+app.use("/js", express.static("./public/js")); // Get the public folder
+app.use("/images", express.static("./public/images")); // Get the public folder
+
 app.get('/', function (req, res) {
-  //res.sendFile(__dirname + "/Home.html");
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('Hello World!\n')
+  res.sendFile(__dirname + "/Home.html");
 })
+
+app.get('/', function (req, res,html) {
+ res.sendFile(path.join(__dirname + '/WebGL.html'));
+});
 
 https.createServer({
   key: fs.readFileSync('server.key'),
