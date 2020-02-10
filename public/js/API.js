@@ -441,14 +441,20 @@ function refreshData() {
 // Search Button ---------------------------------------------------------------
 
 $("#searchButton").click(function(){
-  console.log("Click registered");
+  console.log("Click registered search button");
   var timeOut = setInterval(refreshData, 10000);
-
+  console.log(timeOut);
   // Clear Function
 
   $("#clearButton").click(function(){
+    console.log("Click registered clear button");
+
+    var i = 0;
+
+    for (i = 0; i < 50; i++) {
       planeLayer.clearLayers();
       clearInterval(timeOut);
+    }
   });
 });
 

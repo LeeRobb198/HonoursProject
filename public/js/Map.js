@@ -2,11 +2,27 @@
 
 var map = L.map('map_2D', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    accessToken: 'pk.eyJ1IjoibGVlcm9iYjE5OCIsImEiOiJjazU3ZGIwam8wMDlxM2VxaDg3cmRjc3FnIn0.ZvgcqlYYmrcZjfinLqY1rA'
+// // Initial map
+// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+//     maxZoom: 18,
+//     id: 'mapbox/streets-v11',
+//     accessToken: 'pk.eyJ1IjoibGVlcm9iYjE5OCIsImEiOiJjazU3ZGIwam8wMDlxM2VxaDg3cmRjc3FnIn0.ZvgcqlYYmrcZjfinLqY1rA'
+// }).addTo(map);
+
+// Grey map theme
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	 maxZoom: 18
 }).addTo(map);
+
+// Dark map theme
+// L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+// 	maxZoom: 18
+// });
+
+// Light map theme
+// L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+// 	maxZoom: 18
+// });
 
 // Ensures user cannot go outwidth bounds of map -------------------------------
 
