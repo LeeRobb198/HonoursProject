@@ -4,6 +4,10 @@
       <meta charset='utf-8'>
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
       <title>GeoAR.js demo</title>
+
+      <!-- Stylesheet -->
+      <link rel="stylesheet" href="/css/Home.css">
+
       <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
       <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
       <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -13,6 +17,13 @@
   </head>
 
   <body style='margin: 0; overflow: hidden;'>
+
+    <div class="header">
+      <h1> App With No Name </h1>
+    </div>
+
+    <div class="footerAR"></div>
+
       <a-scene
           vr-mode-ui="enabled: false"
   		embedded
@@ -22,12 +33,15 @@
 
           <!-- <a-image src="./public/images/planeIcon4.svg" scale="4 4 4" gps-entity-place="longitude: -2.297380; latitude: 57.155280;"></a-image> -->
 
-          <a-image src="./public/images/planeIcon4.svg" scale="4 4 4" gps-entity-place="longitude: -2.133136; latitude: 57.119146;"></a-image>
+          <a-image src="./public/images/planeIcon4.svg" scale="4 4 4" gps-entity-place="longitude: -2.297371; latitude: 57.155272;"></a-image>
 
           <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.297380; latitude: 57.155280;" animation-mixer/> -->
 
           <!-- <a-entity gltf-model="./public/images/planeIcon2.svg" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.297380; latitude: 57.155280;" animation-mixer/> -->
           <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.132797; latitude: 57.118908;" animation-mixer/> -->
-  	</a-scene>
+  	  </a-scene>
+
+    <!-- <div class="footer"></div> -->
+
   </body>
 </html>

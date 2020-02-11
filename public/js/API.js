@@ -351,8 +351,10 @@ function refreshData() {
       planeLayer.clearLayers();
 
       // Get chosen country from dropdown
-      var cc = document.getElementById("dropdownCountries");
+      var cc = document.getElementById("countrySelection");
       var chosenCountry = cc.options[cc.selectedIndex].value;
+
+      console.log(chosenCountry);
 
       // Get on ground parameter from dropdown
       // var og = document.getElementById("dropdownOnGround");

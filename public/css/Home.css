@@ -2,24 +2,30 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #FFFFFF;
+  background: #E8E8E8;
 }
 
 /* Header/Logo Title -------------------------------------------------------- */
 
 .header {
-  padding: 55px;
+  padding: 20px;
   text-align: center;
-  background: #3B4990;
+  background: #A9A9A9;
   color: white;
-  font-size: 30px;
+  font-size: 10px;
 }
 
 /* Footer ------------------------------------------------------------------- */
 
 .footer {
-  padding: 55px;
-  background: #3B4990;
+  padding: 20px;
+  background: #A9A9A9;
+}
+
+.footerAR {
+  padding: 20px;
+  background: #A9A9A9;
+  bottom: 2px;
 }
 
 /* Map ---------------------------------------------------------------------- */
@@ -39,10 +45,11 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .buttonStyle {
-  background-color: #3B4990;
+  background-color: #A9A9A9;
   border: none;
   color: white;
   padding: 10px 28px;
@@ -54,14 +61,14 @@ body {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
-  border: 2px solid #3B4990;
+  border: 2px solid #A9A9A9;
   border-radius: 4px;
 }
 
 .buttonStyle:hover {
-  background-color: #FFFFFF;
-  border: 2px solid #3B4990;
-  color: #3B4990;
+  background-color: #E8E8E8;
+  border: 2px solid #A9A9A9;
+  color: #A9A9A9;
   border-radius: 4px;
 }
 
@@ -76,7 +83,8 @@ body {
 }
 
 #parameter_inner_container {
-  background-color: #c0c8eb;
+  background-color: #C8C8C8;
+  border: 4px solid #A9A9A9;
   width: 100%;
   height: 100%;
 }
@@ -88,13 +96,76 @@ body {
 
 /* Countries Dropdown ------------------------------------------------------- */
 
+/* The container must be positioned relative: */
+.dropdownCountries {
+  position: relative;
+  background-color: #A9A9A9;
+  width: 200px;
+  height: 80px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.dropdownCountries select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: #A9A9A9;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #C8C8C8;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 /* On Ground Checkbox ------------------------------------------------------- */
 
 #onGroundParameter {
-  padding-top: 2%;
+  padding-top: 5%;
   padding-left: 3%;
-  width: 25%;
+  width: 75%;
 }
 
 #onGroundInline {
@@ -105,7 +176,7 @@ body {
 
 .slidecontainer {
   padding: 10px;
-  width: 20%; /* Width of the outside container */
+  width: 90%; /* Width of the outside container */
 }
 
 /* The slider itself */
@@ -113,7 +184,7 @@ body {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 15px; /* Specified height */
+  height: 20px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -130,84 +201,16 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #3B4990; /* Blue background */
+  width: 35px; /* Set a specific slider handle width */
+  height: 35px; /* Slider handle height */
+  background: #A9A9A9; /* Grey background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 20px; /* Round thumb */
 }
 
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #4CAF50; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-/* -------- Dropdown Buttons -------- */
-
-/* .dropbtn {
-  background-color: #3B4990;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #FFFFFF;
-  color: #3B4990;
-}
-
-#countriesInput {
-  box-sizing: border-box;
-  background-image: url('searchIcon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-#countriesInput:focus {
-  outline: 3px solid #ddd;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-  height: 20vh;
-}
-
-.dropdown-content option {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown option:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
-} */
-
-/* Second Dropdown */
-
-/* #dropdownCountries {
-  height: 20vh;
-} */
+/* .slider::-moz-range-thumb { */
+  /* width: 25px; /* Set a specific slider handle width */
+  /* height: 25px; /* Slider handle height */
+  /* background: #4CAF50; /* Green background */
+  /* cursor: pointer; /* Cursor on hover */
+/* } */
