@@ -419,7 +419,7 @@ function refreshData() {
           newArray.push(newData);
 
           if(latitude !== null && longitude !== null) {
-            L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer)
+            var markerPoint = new L.marker([latitude, longitude], {icon: planeIcon}).addTo(planeLayer)
             .bindPopup( "<b>Flight Data</b>" +
                         "<br>ICAO 24-bit Address: " + icao24 +
                         "<br>Call Sign: " + callsign +
@@ -477,7 +477,7 @@ $("#3dPageButton").click(function(){
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
-    iconUrl: '/images/planeIcon2.svg',
+    iconUrl: '/images/planeIcon.svg',
     iconSize:     [15, 60], // size of the icon
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
