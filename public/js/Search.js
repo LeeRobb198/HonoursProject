@@ -6,49 +6,9 @@ var url = "https://opensky-network.org/api/states/all";
 
 var planeLayer = L.layerGroup().addTo(map);
 
-// timeout
-
-var timeOut;
-
-var clearFlag;
-
-// Return All States -----------------------------------------------------------
-
-  $.getJSON( url , function(data) {
-
-      //Returns all states to the console
-      console.log("First console");
-      console.log(data);
-
-      console.log(data.states.length);
-
-      // Max altitude test ---------------------
-      var maxAltitude = 0;
-
-      for(var i = 0; i < data.states.length; i++) {
-        // if(data.states[i][7] != false) {
-          if(data.states[i][7] > maxAltitude) {
-            maxAltitude = data.states[i][7];
-            // console.log("Max Altitude: " + maxAltitude);
-          }
-        // }
-      }
-      console.log("Max Altitude: " + maxAltitude);
-
-      console.log("Complete");
-
-      // Returns 1 states first value
-      //console.log(data.states[0][2]);
-  });
-//});
-
 // Refresh Data Function -------------------------------------------------------
 
 function refreshData() {
-
-  // console.log("Clear flag inside function: " + clearFlag);
-  //
-  // if (clearFlag = true) {
 
     $.getJSON( url , function(data) {
 
@@ -147,39 +107,13 @@ function refreshData() {
     });
 }
 
-// Search Button ---------------------------------------------------------------
-
-$("#searchButton").click(function(){
-  console.log("Click registered search button");
-  clearFlag = true;
-  timeOut = setInterval(refreshData, 10000);
-});
-
-$("#clearButton").click(function(){
-  console.log("Click registered clear button");
-  clearFlag = false;
-  planeLayer.clearLayers();
-  clearTimeout(timeOut);
-});
-
-// AR Button -------------------------------------------------------------------
-
-$("#arPageButton").click(function(){
-  console.log("Click registered");
-  location.href="FlightAR.html";
-});
-
-// WebGL Button ----------------------------------------------------------------
-
-$("#3dPageButton").click(function(){
-  console.log("Click registered");
-  location.href="WebGL.html";
-});
-
-// Icon ------------------------------------------------------------------------
-
-var planeIcon = L.icon({
-    iconUrl: '/images/planeIcon.svg',
-    iconSize:     [15, 60], // size of the icon
-    popupAnchor:  [-3, -76], // point from which the popup should open relative to the iconAnchor
-});
+// // Icon ------------------------------------------------------------------------
+//
+// var planeIcon = L.icon({
+//     iconUrl: '/images/planeIcon.svg',
+//     // iconUrl: '/images/plane-icon.jpeg',
+//     iconSize: [20, 20], // size of the icon
+//     popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+//     iconAnchor: [10, 20],
+//     // rotationAngle: true_track
+// });

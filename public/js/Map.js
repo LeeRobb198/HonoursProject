@@ -2,13 +2,6 @@
 
 var map = L.map('map_2D', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
 
-// // Initial map
-// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-//     maxZoom: 18,
-//     id: 'mapbox/streets-v11',
-//     accessToken: 'pk.eyJ1IjoibGVlcm9iYjE5OCIsImEiOiJjazU3ZGIwam8wMDlxM2VxaDg3cmRjc3FnIn0.ZvgcqlYYmrcZjfinLqY1rA'
-// }).addTo(map);
-
 // Grey map theme
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	 maxZoom: 18
@@ -54,3 +47,12 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// Icon ------------------------------------------------------------------------
+
+var planeIcon = L.icon({
+    iconUrl: '/images/planeIcon.svg',
+    iconSize: [20, 20], // size of the icon
+    popupAnchor: [-1, -60], // point from which the popup should open relative to the iconAnchor
+    iconAnchor: [10, 20],
+});
