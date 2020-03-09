@@ -22,8 +22,7 @@ function refreshData() {
         var cc = document.getElementById("countrySelection");
         var chosenCountry = cc.options[cc.selectedIndex].value;
 
-        console.log(chosenCountry);
-
+        // Check if plane is grounded
         var onGround = document.getElementById("onGroundCheck").checked;
 
         // Get minimum slider value
@@ -47,6 +46,7 @@ function refreshData() {
         var newArray = [];
         var testArray = [];
 
+        // Adds the time to the time object of the new results array
         result['times'] = data.time;
 
         var icao24, callsign, origin_country, time_position, last_contact,
@@ -97,8 +97,10 @@ function refreshData() {
 
         }
 
+        // Adds the newArray full of flight data to the states object of the new results array
         result['states'] = newArray;
-        console.log("Third console");
+
+        // Logs array of relevant aircraft from search
         console.log(result);
       }
       else {
@@ -106,14 +108,3 @@ function refreshData() {
       }
     });
 }
-
-// // Icon ------------------------------------------------------------------------
-//
-// var planeIcon = L.icon({
-//     iconUrl: '/images/planeIcon.svg',
-//     // iconUrl: '/images/plane-icon.jpeg',
-//     iconSize: [20, 20], // size of the icon
-//     popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-//     iconAnchor: [10, 20],
-//     // rotationAngle: true_track
-// });
