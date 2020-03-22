@@ -11,7 +11,7 @@ var timeOut;
 
 var clearFlag;
 
-$("#searchButton").click(function(){
+$("#searchFlightsButton").click(function(){
   console.log("Click registered search button");
   clearFlag = true;
   timeOut = setInterval(refreshData, 10000);
@@ -19,9 +19,35 @@ $("#searchButton").click(function(){
 
 // Clear Button ----------------------------------------------------------------
 
-$("#clearButton").click(function(){
-  console.log("Click registered clear button");
+$("#resetButton").click(function(){
+  console.log("Click registered reset button");
   clearFlag = false;
   planeLayer.clearLayers();
   clearTimeout(timeOut);
 });
+
+function toggleSearchOverlay() {
+  let overlaySearchDiv = document.querySelector(".search_container");
+  let buttonGroupDiv = document.getElementById("buttonGroup");
+  // console.log(overlaySearchDiv.style.opacity);
+  if (overlaySearchDiv.style.display === "none") {
+    overlaySearchDiv.style.display = "block";
+    buttonGroupDiv.style.display = "none";
+  } else {
+    overlaySearchDiv.style.display = "none";
+    buttonGroupDiv.style.display = "block";
+  }
+}
+
+function toggleSearchExit() {
+  let overlaySearchDiv = document.querySelector(".search_container");
+  let buttonGroupDiv = document.getElementById("buttonGroup");
+  // console.log(overlaySearchDiv.style.opacity);
+  if (overlaySearchDiv.style.display === "none") {
+    overlaySearchDiv.style.display = "block";
+    buttonGroupDiv.style.display = "none";
+  } else {
+    overlaySearchDiv.style.display = "none";
+    buttonGroupDiv.style.display = "block";
+  }
+}
