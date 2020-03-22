@@ -1,5 +1,5 @@
 (function() {
-    // save these original methods before they are overwritten
+    // Save original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
 

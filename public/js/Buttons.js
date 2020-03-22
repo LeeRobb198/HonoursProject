@@ -14,6 +14,7 @@ var clearFlag;
 $("#searchFlightsButton").click(function(){
   console.log("Click registered search button");
   clearFlag = true;
+  refreshData();
   timeOut = setInterval(refreshData, 10000);
 });
 
@@ -29,7 +30,7 @@ $("#resetButton").click(function(){
 function toggleSearchOverlay() {
   let overlaySearchDiv = document.querySelector(".search_container");
   let buttonGroupDiv = document.getElementById("buttonGroup");
-  // console.log(overlaySearchDiv.style.opacity);
+
   if (overlaySearchDiv.style.display === "none") {
     overlaySearchDiv.style.display = "block";
     buttonGroupDiv.style.display = "none";
@@ -42,7 +43,7 @@ function toggleSearchOverlay() {
 function toggleSearchExit() {
   let overlaySearchDiv = document.querySelector(".search_container");
   let buttonGroupDiv = document.getElementById("buttonGroup");
-  // console.log(overlaySearchDiv.style.opacity);
+
   if (overlaySearchDiv.style.display === "none") {
     overlaySearchDiv.style.display = "block";
     buttonGroupDiv.style.display = "none";

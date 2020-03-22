@@ -47,7 +47,7 @@ map.on('locationerror', onLocationError);
 // Icon ------------------------------------------------------------------------
 
 var planeIcon = L.icon({
-    iconUrl: '/images/planeIcon.svg',
+    iconUrl: '/images/plane-icon.svg',
     iconSize: [20, 20], // size of the icon
     popupAnchor: [-1, -60], // point from which the popup should open relative to the iconAnchor
     iconAnchor: [10, 20],
