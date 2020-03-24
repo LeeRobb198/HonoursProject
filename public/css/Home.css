@@ -83,6 +83,11 @@ body {
   width: 30px;
 }
 
+.searchExitIconSize {
+  height: 30px;
+  width: 30px;
+}
+
 .searchButtonPosition {
   display: flex;
   justify-content: center;
@@ -133,7 +138,6 @@ body {
   background: #407099;
   height: 60%;
   width: 100%;
-  color: white;
   bottom: 0;
   -webkit-transition: .3s; /* 0.3 seconds transition on hover */
   z-index: 2;
@@ -377,4 +381,59 @@ body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* Pop-up ------------------------------------------------------------------- */
+
+.popupDiv {
+  position: absolute;
+  background: #407099;
+  top: 30%;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+  height: 180px;
+  z-index: 2;
+}
+
+.popupInnerDiv {
+  position: absolute;
+  background: #B8DEFF;
+  width: 90%;
+  height: 70%;
+  top: 25%;
+  left: 5%;
+  right: 5%;
+  color: #407099;
+  font-size: 15px;
+  text-align: center;
+}
+
+.popupTitle {
+  color: #B8DEFF;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-left: 20px;
+  /* text-align: left; */
+}
+
+.popupExitIconSize {
+  height: 15px;
+  width: 15px;
+}
+
+#popupExitButton {
+  position: absolute;
+  background-color: #407099;
+  border: 2px solid #407099;
+  top: 7%;
+  right: 2%;
+}
+
+#popupExitButton:hover {
+  position: absolute;
+  background-color: #487dab;
+  border: 2px solid #487dab;
+  top: 7%;
+  right: 2%;
 }

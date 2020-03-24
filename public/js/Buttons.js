@@ -27,6 +27,8 @@ $("#resetButton").click(function(){
   clearTimeout(timeOut);
 });
 
+// Search Overlay --------------------------------------------------------------
+
 function toggleSearchOverlay() {
   let overlaySearchDiv = document.querySelector(".search_container");
   let buttonGroupDiv = document.getElementById("buttonGroup");
@@ -51,4 +53,11 @@ function toggleSearchExit() {
     overlaySearchDiv.style.display = "none";
     buttonGroupDiv.style.display = "block";
   }
+}
+
+// Pop-up Overlay --------------------------------------------------------------
+
+function togglePopupExit() {
+  let overlayPopupDiv = document.querySelector(".popupDiv");
+  overlayPopupDiv.style.display = "none";
 }
