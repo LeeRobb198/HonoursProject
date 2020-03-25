@@ -151,8 +151,17 @@ async function refreshData() {
               // Last Update
               var timestamp = data.body.time
               dateObj = new Date(timestamp * 1000);
-              utcString = dateObj.toUTCString();
-              lastUpdate = utcString.slice(-11, -4);
+
+              // hours as 2 digits (hh)
+              var hours = ("0" + dateObj.getHours()).slice(-2);
+
+              // minutes as 2 digits (mm)
+              var minutes = ("0" + dateObj.getMinutes()).slice(-2);
+
+              // seconds as 2 digits (ss)
+              var seconds = ("0" + dateObj.getSeconds()).slice(-2);
+
+              lastUpdate = hours + ":" + minutes + ":" + seconds;
               lastUpdateValue.innerHTML = lastUpdate;
             }
           }

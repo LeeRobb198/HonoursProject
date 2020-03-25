@@ -1,0 +1,117 @@
+/* -------------------------------------------------------------------------- */
+/* Search Container --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.search_container {
+  position: absolute;
+  background: #407099;
+  height: 60%;
+  width: 100%;
+  bottom: 0;
+  -webkit-transition: .3s; /* 0.3 seconds transition on hover */
+  z-index: 2;
+}
+
+/* For mobile device change textbox width */
+@media screen and (max-height: 740px) {
+  .search_container {
+    position: absolute;
+    background: #407099;
+    height: 70%;
+    width: 100%;
+    color: white;
+    bottom: 0;
+    -webkit-transition: .3s; /* 0.3 seconds transition on hover */
+    z-index: 2;
+  }
+}
+
+.searchTitle {
+  color: #B8DEFF;
+  font-size: 35px;
+  padding-top: 5%;
+}
+
+#parameter_inner_container {
+  background-color: #B8DEFF;
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  bottom: 3%;
+}
+
+.countriesParameter {
+  margin-top: -10px;
+}
+
+.countriesTitle {
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #407099;
+}
+
+.altitudeTitle {
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #407099;
+}
+
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.searchExitIconSize {
+  height: 100%;
+  width: 100%;
+}
+
+.searchButtonPosition {
+  display: flex;
+  justify-content: center;
+}
+
+#searchFlightsButton {
+  background-color: #407099;
+  color: #B8DEFF;
+  text-decoration: none;
+  font-size: 15px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: 2px solid #407099;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle
+}
+
+#searchFlightsButton:hover {
+  background-color: #487dab;
+  border: 2px solid #487dab;
+  color: #487dab;
+  border-radius: 4px;
+  color: #B8DEFF;
+  font-size: 10px;
+}
+
+#searchExitButton {
+  position: absolute;
+  background-color: #407099;
+  border: 2px solid #407099;
+  top: 3%;
+  right: 0;
+  width: 8%;
+  /* height: 10%; */
+  margin-right: 3%;
+  padding: 0;
+}
+
+#searchExitButton:hover {
+  position: absolute;
+  background-color: #487dab;
+  border: 2px solid #487dab;
+  top: 2.5%;
+  right: 0;
+}

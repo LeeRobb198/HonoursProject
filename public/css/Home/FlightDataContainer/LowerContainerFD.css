@@ -1,0 +1,88 @@
+/* -------------------------------------------------------------------------- */
+/* Lower Container ---------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.lowerMainContent {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 55%;
+}
+
+.lowerUpdateContent {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 90%;
+  height: 30%;
+  clear: both;
+}
+
+.icaoContent {
+  position: absolute;
+  margin-top: 0;
+  width: 22%;
+  height: 100%;
+  top: 0;
+}
+
+.onGroundContent {
+  position: absolute;
+  margin-top: 0;
+  margin-left: 5%;
+  width: 23%;
+  height: 100%;
+  top: 0;
+  left: 20%;
+}
+
+.dataSourceContent {
+  position: absolute;
+  margin-top: 0;
+  margin-right: 8%;
+  width: 21%;
+  height: 100%;
+  top: 0;
+  right: 20%;
+}
+
+.verticalRateContent {
+  position: absolute;
+  margin-top: 0;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  right: 0%;
+}
+
+.lowerContentTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.lowerContentText {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.lastUpdatePosition {
+  height: 100%;
+  width: 40%;
+  margin: auto;
+  font-size: 15px;
+}
+
+.lastUpdateTitle {
+  float: left;
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+.lastUpdateText {
+  float: right;
+  margin-top: 0;
+  padding-top: 10px;
+}
