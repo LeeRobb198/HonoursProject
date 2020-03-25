@@ -61,3 +61,13 @@ function togglePopupExit() {
   let overlayPopupDiv = document.querySelector(".popupDiv");
   overlayPopupDiv.style.display = "none";
 }
+
+// Flight Data Overlay ---------------------------------------------------------
+
+function toggleFlightDataExit() {
+  let overlayFlightDataDiv = document.querySelector(".flightData_container");
+  let buttonGroupDiv = document.getElementById("buttonGroup");
+
+  overlayFlightDataDiv.style.display = "none";
+  buttonGroupDiv.style.display = "block";
+}

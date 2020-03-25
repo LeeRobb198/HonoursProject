@@ -7,10 +7,6 @@ app.use(express.json());
 app.use(express.static(__dirname + '/public')); // Get the public folder
 app.use(express.static(__dirname)); // Get the other webpages
 
-// app.use("/css", express.static("./public/css")); // Get the public folder
-// app.use("/js", express.static("./public/js")); // Get the public folder
-// app.use("/images", express.static("./public/images")); // Get the public folder
-
 app.get('/', function (req, res) {
   res.sendFile(__dirname + "/Home.html");
 })

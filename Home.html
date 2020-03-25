@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+
+  <!------------------------------------------>
+  <!-- Head ------------------------------------------------------------------->
+  <!------------------------------------------>
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -9,6 +14,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/Home.css">
+    <link rel="stylesheet" href="/css/SearchContainer.css">
+    <link rel="stylesheet" href="/css/FlightDataContainer.css">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
@@ -21,17 +28,22 @@
 
   </head>
 
-<!-- Body ---------------------------------------------->
+  <!------------------------------------------>
+  <!-- Body ------------------------------------------------------------------->
+  <!------------------------------------------>
 
   <body>
+    <!-- Logo -->
     <div class="header">
       <img class="headerImage" src="/images/Header.png">
     </div>
 
+    <!-- Map -->
     <section id="map_container">
       <div id="map_2D"></div>
     </section>
 
+    <!-- Buttons Bar -->
     <div id="buttonGroup" style="display: block;">
       <button class="buttonStyle" id="searchButton" onclick="toggleSearchOverlay()" type="submit">
         <img class="iconSize" src="/images/searchIcon.svg">
@@ -47,6 +59,8 @@
       </button>
 		</div>
 
+    <!-- Search Tab ----------------------------------------------------------->
+
     <section class="search_container" style="display: none;">
       <div class="searchButtonPosition">
         <button id="searchFlightsButton" onclick="toggleSearchOverlay()">
@@ -61,7 +75,7 @@
       </div>
       <section id="parameter_inner_container">
 
-        <!-- Countries dropdown ////////////////////////////////////////// -->
+        <!-- Countries -->
 
         <div class="countriesParameter">
           <div class="countriesTitle">
@@ -94,7 +108,7 @@
               <option value="Bolivia">Bolivia</option>
               <option value="Botswana">Botswana</option>
               <option value="Brazil">Brazil</option>
-              <option value="Brunei Darussalam">Brunei Darussalam</option>
+              <option value="Brunei Darussalam">Brunei</option>
               <option value="Bulgaria">Bulgaria</option>
               <option value="Burkina Faso">Burkina Faso</option>
               <!-- C -->
@@ -134,9 +148,9 @@
               <option value="Iceland">Iceland</option>
               <option value="India">India</option>
               <option value="Indonesia">Indonesia</option>
+              <option value="Islamic Republic of Iran">Iran</option>
               <option value="Iraq">Iraq</option>
               <option value="Ireland">Ireland</option>
-              <option value="Islamic Republic of Iran">Islamic Republic of Iran</option>
               <option value="Israel">Israel</option>
               <option value="Italy">Italy</option>
               <!-- J -->
@@ -145,14 +159,13 @@
               <!-- K -->
               <option value="Kazakhstan">Kazakhstan</option>
               <option value="Kenya">Kenya</option>
-              <option value="Kingdom of the Netherlands">Kingdom of the Netherlands</option>
               <option value="Kuwait">Kuwait</option>
               <option value="Kyrgyzstan">Kyrgyzstan</option>
               <!-- L -->
-              <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+              <option value="Lao People's Democratic Republic">Laos</option>
               <option value="Latvia">Latvia</option>
               <option value="Lebanon">Lebanon</option>
-              <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+              <option value="Libyan Arab Jamahiriya">Libya</option>
               <option value="Lithuania">Lithuania</option>
               <option value="Luxembourg">Luxembourg</option>
               <!-- M -->
@@ -164,6 +177,7 @@
               <option value="Mauritania">Mauritania</option>
               <option value="Mauritius">Mauritius</option>
               <option value="Mexico">Mexico</option>
+              <option value="Republic of Moldova">Moldova</option>
               <option value="Monaco">Monaco</option>
               <option value="Mongolia">Mongolia</option>
               <option value="Montenegro">Montenegro</option>
@@ -172,9 +186,11 @@
               <!-- N -->
               <option value="Namibia">Namibia</option>
               <option value="Nepal">Nepal</option>
+              <option value="Kingdom of the Netherlands">Netherlands</option>
               <option value="New Zealand">New Zealand</option>
               <option value="Niger">Niger</option>
               <option value="Nigeria">Nigeria</option>
+              <option value="The former Yugoslav Republic of Macedonia">North Macedonia</option>
               <option value="Norway">Norway</option>
               <!-- O -->
               <option value="Oman">Oman</option>
@@ -190,10 +206,8 @@
               <!-- Q -->
               <option value="Qatar">Qatar</option>
               <!-- R -->
-              <option value="Republic of Korea">Republic of Korea</option>
-              <option value="Republic of Moldova">Republic of Moldova</option>
               <option value="Romania">Romania</option>
-              <option value="Russian Federation">Russian Federation</option>
+              <option value="Russian Federation">Russia</option>
               <option value="Rwanda">Rwanda</option>
               <!-- S -->
               <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
@@ -207,18 +221,19 @@
               <option value="Slovenia">Slovenia</option>
               <option value="Solomon Islands">Solomon Islands</option>
               <option value="South Africa">South Africa</option>
+              <option value="Republic of Korea">South Korea</option>
               <option value="Spain">Spain</option>
               <option value="Sri Lanka">Sri Lanka</option>
               <option value="Suriname">Suriname</option>
               <option value="Swaziland">Swaziland</option>
               <option value="Sweden">Sweden</option>
               <option value="Switzerland">Switzerland</option>
-              <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+              <option value="Syrian Arab Republic">Syria</option>
               <!-- T -->
               <option value="Taiwan">Taiwan</option>
               <option value="Tajikistan">Tajikistan</option>
+              <option value="United Republic of Tanzania">Tanzania</option>
               <option value="Thailand">Thailand</option>
-              <option value="The former Yugoslav Republic of Macedonia">The former Yugoslav Republic of Macedonia</option>
               <option value="Togo">Togo</option>
               <option value="Trinidad and Tobago">Trinidad and Tobago</option>
               <option value="Tunisia">Tunisia</option>
@@ -227,7 +242,6 @@
               <!-- U -->
               <option value="Ukraine">Ukraine</option>
               <option value="United Arab Emirates">United Arab Emirates</option>
-              <option value="United Republic of Tanzania">United Republic of Tanzania</option>
               <option value="Uruguay">Uruguay</option>
               <option value="Uzbekistan">Uzbekistan</option>
               <!-- V -->
@@ -241,9 +255,9 @@
         </div>
 
         <!-- Divider -->
-        <div class="divider"></div>
+        <div class="horizontalDivider"></div>
 
-        <!-- Min altitude slider /////////////////////////////////////////// -->
+        <!-- Min altitude ----------------------------------------------------->
 
         <div id="searchParameters">
           <div class="altitudeTitle">
@@ -254,7 +268,7 @@
           </div>
         </div>
 
-        <!-- Max altitude slider /////////////////////////////////////////// -->
+        <!-- Max altitude ----------------------------------------------------->
 
         <div id="searchParameters">
           <div class="altitudeTitle">
@@ -266,9 +280,9 @@
         </div>
 
         <!-- Divider -->
-        <div class="divider"></div>
+        <div class="horizontalDivider"></div>
 
-        <!-- On ground dropdown //////////////////////////////////////////// -->
+        <!-- On ground -------------------------------------------------------->
 
         <div class="onGroundContainer">
           <label class="onGroundParameter"> Search For Planes On The Ground
@@ -279,6 +293,59 @@
 
       </section>
     </section>
+
+    <!-- Flight Data Tab ------------------------------------------------------>
+
+    <section class="flightData_container" style="display: none;">
+      <section class="flightData_upper_container">
+        <div class="upperLeftContent">
+          <h2 id="callSignValue"> Call Sign </h2>
+          <h2 id="countryValue"> Country of Origin </h2>
+        </div>
+        <div class="verticalDivider"></div>
+        <div class="upperRightContent">
+          <div class="altitudeContent">
+            <h5 class="upperRightTitle"> Altitude </h5>
+            <h5 class="upperRightContentText" id="altitudeValue"></h5>
+          </div>
+          <div class="groundSpeedContent">
+            <h5 class="upperRightTitle"> Ground Speed </h5>
+            <h5 class="upperRightContentText" id="groundSpeedValue"></h5>
+          </div>
+        </div>
+        <button id="flightDataExitButton" onclick="toggleFlightDataExit()">
+          <img class="flightDataExitIconSize" src="/images/exit-icon.svg">
+        </button>
+      </section>
+      <section class="flightData_lower_container">
+        <div class="lowerMainContent">
+          <div class="icaoContent">
+            <h5 class="lowerContentTitle"> ICAO </h5>
+            <h5 class="lowerContentText" id="icaoValue"></h5>
+          </div>
+          <div class="onGroundContent">
+            <h5 class="lowerContentTitle"> Airbourne </h5>
+            <h5 class="lowerContentText" id="onGroundValue"></h5>
+          </div>
+          <div class="dataSourceContent">
+            <h5 class="lowerContentTitle"> Source </h5>
+            <h5 class="lowerContentText" id="dataSourceValue"></h5>
+          </div>
+          <div class="verticalRateContent">
+            <h5 class="lowerContentTitle"> Vertical Rate </h5>
+            <h5 class="lowerContentText" id="verticalRateValue"></h5>
+          </div>
+        </div>
+        <div class="lowerUpdateContent">
+          <div class="lastUpdatePosition">
+            <h5 class="lastUpdateTitle"> Last Update: </h5>
+            <h5 class="lastUpdateText" id="lastUpdateValue"></h5>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Additional Content --------------------------------------------------->
 
     <!-- Pop-up No Flights -->
     <div class="popupDiv" style="display: none;">
@@ -294,9 +361,14 @@
       </div>
     </div>
 
-    <!-- Script -->
+    <!-- <div class="testDiv">
+      <h1 id="testID"> TEST </h1>
+    </div> -->
+
+    <!-- Scripts -------------------------------------------------------------->
+
     <script src="/js/Map.js"></script>
-    <script src="/js/Search.js"></script>
+    <script src="/js/Functionality.js"></script>
     <script src="/js/Buttons.js"></script>
     <script src="/js/SelectMenu.js"></script>
     <script src="/js/RotatedMarker.js"></script>
