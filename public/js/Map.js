@@ -2,10 +2,9 @@
 
 var map = L.map('map_2D', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    accessToken: 'pk.eyJ1IjoibGVlcm9iYjE5OCIsImEiOiJjazU3ZGIwam8wMDlxM2VxaDg3cmRjc3FnIn0.ZvgcqlYYmrcZjfinLqY1rA'
+// Light map theme
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	maxZoom: 18
 }).addTo(map);
 
 // Ensures user cannot go outwidth bounds of map -------------------------------
@@ -25,11 +24,17 @@ map.locate({setView: true, maxZoom: 16});
 
 function onLocationFound(e) {
     var radius = e.accuracy;
+		// Two decimal points
+		var twoDecRadius = (Math.round(radius * 100) / 100);
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("You are within " + twoDecRadius + " meters from this point").openPopup();
 
-    L.circle(e.latlng, radius).addTo(map);
+    L.circle(e.latlng, radius, {
+			color: '#407099',
+			fillColor: '#B8DEFF',
+    fillOpacity: 0.2
+	}).addTo(map);
 }
 
 function onLocationError(e) {
@@ -38,3 +43,12 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// Icon ------------------------------------------------------------------------
+
+var planeIcon = L.icon({
+    iconUrl: '/images/plane-icon.svg',
+    iconSize: [20, 20], // size of the icon
+    popupAnchor: [-1, -60], // point from which the popup should open relative to the iconAnchor
+    iconAnchor: [10, 20],
+});

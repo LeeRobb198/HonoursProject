@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LeeRobb198/HonoursProject#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "leaflet-rotatedmarker": "^0.2.0"
   }
 }
