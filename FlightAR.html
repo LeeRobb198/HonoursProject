@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
+
+  <!------------------------------------------>
+  <!-- Head ------------------------------------------------------------------->
+  <!------------------------------------------>
+
   <head>
       <meta charset='utf-8'>
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
       <title>GeoAR.js demo</title>
 
       <!-- Stylesheet -->
-      <link rel="stylesheet" href="/css/Home.css">
+      <link rel="stylesheet" href="/css/FlightAR/FlightAR.css">
+
+      <!-- Flight Data Container CSS -->
+      <link rel="stylesheet" href="/css/Home/FlightDataContainer/FlightDataContainer.css">
+      <link rel="stylesheet" href="/css/Home/FlightDataContainer/UpperContainerFD.css">
+      <link rel="stylesheet" href="/css/Home/FlightDataContainer/LowerContainerFD.css">
 
       <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
       <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
@@ -16,32 +26,93 @@
       </script>
   </head>
 
-  <body style='margin: 0; overflow: hidden;'>
+  <!------------------------------------------>
+  <!-- Body ------------------------------------------------------------------->
+  <!------------------------------------------>
 
+  <body>
+
+    <!-- Logo -->
     <div class="header">
-      <h1> App With No Name </h1>
+      <img class="headerImage" src="/images/Header.png">
     </div>
 
-    <div class="footerAR"></div>
+    <!-- A-Scene -------------------------------------------------------------->
 
-      <a-scene
-          vr-mode-ui="enabled: false"
-  		embedded
-          arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-scene
+        vr-mode-ui="enabled: false"
+		embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
-          <a-camera gps-camera rotation-reader></a-camera>
+        <a-camera gps-camera rotation-reader far="1000"></a-camera>
 
-          <!-- <a-image src="./public/images/planeIcon4.svg" scale="4 4 4" gps-entity-place="longitude: -2.297380; latitude: 57.155280;"></a-image> -->
+        <!-- <a-text
+          value="This content will always face you."
+          look-at="[gps-camera]"
+          scale="120 120 120"
+          gps-entity-place="latitude: 57.155279; longitude: -2.297374;"
+        ></a-text> -->
 
-          <a-image src="./public/images/planeIcon4.svg" scale="4 4 4" gps-entity-place="longitude: -2.297371; latitude: 57.155272;"></a-image>
+        <!-- <a-camera gps-camera="minDistance: 0;" rotation-reader></a-camera> -->
 
-          <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.297380; latitude: 57.155280;" animation-mixer/> -->
+        <!-- Outside -->
+        <!-- <a-image src="./public/images/PlaneARIcon.svg" scale="4 4 4" gps-entity-place="longitude: -2.297374; latitude: 57.155279;"></a-image> -->
+        <!-- Old Skene Road -->
+        <!-- <a-image src="./public/images/PlaneARIcon.svg" scale="80 80 80" gps-entity-place="longitude: -2.294935; latitude: 57.154106;"></a-image> -->
+        <!-- Markies -->
+        <!-- <a-image src="./public/images/PlaneARIcon.svg" scale="200 200 200" gps-entity-place="longitude: -2.286893; latitude: 57.153730;"></a-image> -->
+        <!-- Outside Town -->
+        <!-- <a-image src="./public/images/PlaneARIcon.svg" scale="400 400 400" gps-entity-place="longitude: -2.244174; latitude: 57.139546;"></a-image> -->
 
-          <!-- <a-entity gltf-model="./public/images/planeIcon2.svg" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.297380; latitude: 57.155280;" animation-mixer/> -->
-          <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -2.132797; latitude: 57.118908;" animation-mixer/> -->
-  	  </a-scene>
+	  </a-scene>
 
-    <!-- <div class="footer"></div> -->
+    <!-- Flight Data Tab ------------------------------------------------------>
+
+    <section class="flightData_container">
+      <section class="flightData_upper_container">
+        <div class="upperLeftContent">
+          <h2 id="callSignValue"> Call Sign </h2>
+          <h2 id="countryValue"> Country of Origin </h2>
+        </div>
+        <div class="verticalDivider"></div>
+        <div class="upperRightContent">
+          <div class="altitudeContent">
+            <h5 class="upperRightTitle"> Altitude </h5>
+            <h5 class="upperRightContentText" id="altitudeValue"></h5>
+          </div>
+          <div class="groundSpeedContent">
+            <h5 class="upperRightTitle"> Ground Speed </h5>
+            <h5 class="upperRightContentText" id="groundSpeedValue"></h5>
+          </div>
+        </div>
+      </section>
+      <section class="flightData_lower_container">
+        <div class="lowerMainContent">
+          <div class="icaoContent">
+            <h5 class="lowerContentTitle"> ICAO </h5>
+            <h5 class="lowerContentText" id="icaoValue"></h5>
+          </div>
+          <div class="onGroundContent">
+            <h5 class="lowerContentTitle"> Airbourne </h5>
+            <h5 class="lowerContentText" id="onGroundValue"></h5>
+          </div>
+          <div class="dataSourceContent">
+            <h5 class="lowerContentTitle"> Source </h5>
+            <h5 class="lowerContentText" id="dataSourceValue"></h5>
+          </div>
+          <div class="verticalRateContent">
+            <h5 class="lowerContentTitle"> Vertical Rate </h5>
+            <h5 class="lowerContentText" id="verticalRateValue"></h5>
+          </div>
+        </div>
+        <div class="lowerUpdateContent">
+          <div class="lastUpdatePosition">
+            <h5 class="lastUpdateTitle"> Last Update: </h5>
+            <h5 class="lastUpdateText" id="lastUpdateValue"></h5>
+          </div>
+        </div>
+      </section>
+    </section>
 
   </body>
 </html>

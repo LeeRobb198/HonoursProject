@@ -1,0 +1,60 @@
+/* -------------------------------------------------------------------------- */
+/* Upper Container ---------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.upperLeftContent {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  height: 70%;
+  width: 55%;
+}
+
+.upperRightContent {
+  position: absolute;
+  top: 12.5%;
+  right: 3%;
+  height: 75%;
+  width: 28%;
+}
+
+#callSignValue {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+#countryValue {
+  position: absolute;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 22px;
+}
+
+.groundSpeedContent {
+  position: absolute;
+  margin-top: 10px;
+  width: 100%;
+  bottom: 0;
+}
+
+.altitudeContent {
+  position: absolute;
+  margin-top: 0;
+  width: 100%;
+  top: 0;
+}
+
+.upperRightTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.upperRightContentText {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
