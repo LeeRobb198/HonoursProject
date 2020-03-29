@@ -105,7 +105,7 @@ async function refreshData() {
           var lng = e.latlng.lng;
           var rotationAngle = e.target.options.rotationAngle;
 
-          console.log(data.body.newArray.length);
+          // console.log(data.body.newArray.length);
 
           for(var i = 0; i < data.body.newArray.length; i++) {
             if ((data.body.newArray[i][6] == lat) && (data.body.newArray[i][5] == lng) && (data.body.newArray[i][10] == rotationAngle)) {
