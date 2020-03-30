@@ -2,7 +2,7 @@
 /* Lower Container ---------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-.lowerMainContent {
+.lowerMainContent_AR {
   position: absolute;
   top: 10%;
   left: 5%;
@@ -10,7 +10,7 @@
   height: 55%;
 }
 
-.lowerUpdateContent {
+.lowerUpdateContent_AR {
   position: absolute;
   top: 60%;
   left: 5%;
@@ -19,7 +19,7 @@
   clear: both;
 }
 
-.icaoContent {
+.icaoContent_AR {
   position: absolute;
   margin-top: 0;
   width: 22%;
@@ -27,7 +27,7 @@
   top: 0;
 }
 
-.onGroundContent {
+.onGroundContent_AR {
   position: absolute;
   margin-top: 0;
   margin-left: 5%;
@@ -37,7 +37,7 @@
   left: 20%;
 }
 
-.dataSourceContent {
+.dataSourceContent_AR {
   position: absolute;
   margin-top: 0;
   margin-right: 8%;
@@ -47,7 +47,7 @@
   right: 20%;
 }
 
-.verticalRateContent {
+.verticalRateContent_AR {
   position: absolute;
   margin-top: 0;
   width: 25%;
@@ -56,32 +56,32 @@
   right: 0%;
 }
 
-.lowerContentTitle {
+.lowerContentTitle_AR {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 14px;
 }
 
-.lowerContentText {
+.lowerContentText_AR {
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 18px;
 }
 
-.lastUpdatePosition {
+.lastUpdatePosition_AR {
   height: 100%;
   width: 40%;
   margin: auto;
   font-size: 15px;
 }
 
-.lastUpdateTitle {
+.lastUpdateTitle_AR {
   float: left;
   margin-top: 0;
   padding-top: 10px;
 }
 
-.lastUpdateText {
+.lastUpdateText_AR {
   float: right;
   margin-top: 0;
   padding-top: 10px;

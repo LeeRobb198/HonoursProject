@@ -5,10 +5,27 @@ $("#arPageButton").click(function(){
   // console.log("Lat: " + lat);
   // console.log("Lng: " + lng);
 
-  // let buttonGroupDiv = document.getElementById("buttonGroup");
-  // if () {
-    location.href="FlightAR.html";
-  // }
+  var latitude = valuesArray[0];
+  var longitude = valuesArray[1];
+  var rotation = valuesArray[2];
+  var callSignValue = valuesArray[3];
+  var countryValue = valuesArray[4];
+  var groundSpeedValue = valuesArray[5];
+  var altitudeValue = valuesArray[6];
+  var icaoValue = valuesArray[7];
+  var dataSourceValue = valuesArray[8];
+  var onGroundValue = valuesArray[9];
+  var verticalRateValue = valuesArray[10];
+  var lastUpdateValue = valuesArray[11];
+
+  var queryString = "?paraLatitude=" + latitude + "&paraLongitude=" + longitude +
+                    "&paraRotation=" + rotation + "&paraCallSign=" + callSignValue + 
+                    "&paraCountry=" + countryValue + "&paraGroundSpeed=" + groundSpeedValue +
+                    "&paraAltitude=" + altitudeValue + "&paraIcao=" + icaoValue +
+                    "&paraDataSource=" + dataSourceValue + "&paraOnGround=" + onGroundValue +
+                    "&paraVerticalRate=" + verticalRateValue + "&paraLastUpdate=" + lastUpdateValue;
+
+  window.location.href = "FlightAR.html" + queryString;
 });
 
 // Search Button ---------------------------------------------------------------

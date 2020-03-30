@@ -2,7 +2,7 @@
 /* Flight Data Container  --------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-.flightData_container {
+.flightData_container_AR {
   position: absolute;
   bottom: 0%;
   width: 100%;
@@ -11,7 +11,7 @@
   z-index: 2;
 }
 
-.flightData_upper_container {
+.flightData_upper_container_AR {
   position: absolute;
   display: inline-block;
   background: #407099;
@@ -21,7 +21,7 @@
   height: 55%;
 }
 
-.flightData_lower_container {
+.flightData_lower_container_AR {
   position: absolute;
   background: #B8DEFF;
   color: #407099;

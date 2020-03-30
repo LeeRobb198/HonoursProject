@@ -2,7 +2,7 @@
 /* Upper Container ---------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-.upperLeftContent {
+.upperLeftContent_AR {
   position: absolute;
   top: 15%;
   left: 5%;
@@ -10,7 +10,7 @@
   width: 55%;
 }
 
-.upperRightContent {
+.upperRightContent_AR {
   position: absolute;
   top: 12.5%;
   right: 3%;
@@ -18,13 +18,13 @@
   width: 28%;
 }
 
-#callSignValue {
+#callSignValue_AR {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
 }
 
-#countryValue {
+#countryValue_AR {
   position: absolute;
   bottom: 0;
   margin-top: 0;
@@ -32,27 +32,27 @@
   font-size: 22px;
 }
 
-.groundSpeedContent {
+.groundSpeedContent_AR {
   position: absolute;
   margin-top: 10px;
   width: 100%;
   bottom: 0;
 }
 
-.altitudeContent {
+.altitudeContent_AR {
   position: absolute;
   margin-top: 0;
   width: 100%;
   top: 0;
 }
 
-.upperRightTitle {
+.upperRightTitle_AR {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 13px;
 }
 
-.upperRightContentText {
+.upperRightContentText_AR {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
