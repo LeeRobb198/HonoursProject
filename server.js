@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 
 // POST Method -----------------------------------------------------------------
 
-app.post('/apiRequest', function(request, response)  {
+app.post('/apiSpecificRequest', function(request, response)  {
   // Test - Returns the array from client
   console.log("\nRequest body from client: ");
   console.log(request.body);
@@ -103,6 +103,81 @@ app.post('/apiRequest', function(request, response)  {
   }).on('error', function(e){
         console.log("POST method got an error: ", e);
   });
+}); // End of post method
+
+// Second POST -----------------------------------------------------------------
+
+app.post('/apiContinuedRequest', function(request, response)  {
+
+  // URL
+  var url = "https://opensky-network.org/api/states/all";
+
+  // Response to server --------------------------------------------------------
+
+  https.get(url, function(res){
+
+    var body = '';
+
+      res.on('data', function(chunk){
+          body += chunk;
+      });
+
+      res.on('end', function(){
+        var apiContinuedResponse = JSON.parse(body);
+
+        var newData = [];
+        var newArray = [];
+
+        // Adds the time to the time object of the new results array
+        var time = apiContinuedResponse.time;
+
+        var icao24, callsign, origin_country, time_position, last_contact,
+            longitude, latitude, baro_altitude, on_ground, velocity,
+            true_track, vertical_rate, sensors, geo_altitude, squawk,
+            spi, position_source;
+
+        for(var i = 0; i < apiContinuedResponse.states.length; i++) {
+          if((apiContinuedResponse.states[i][6] !== null && apiContinuedResponse.states[i][5] !== null)) {
+              icao24 = apiContinuedResponse.states[i][0];
+              callsign = apiContinuedResponse.states[i][1];
+              origin_country = apiContinuedResponse.states[i][2];
+              time_position = apiContinuedResponse.states[i][3];
+              last_contact = apiContinuedResponse.states[i][4];
+              longitude = apiContinuedResponse.states[i][5];
+              latitude = apiContinuedResponse.states[i][6];
+              baro_altitude = apiContinuedResponse.states[i][7];
+              on_ground = apiContinuedResponse.states[i][8];
+              velocity = apiContinuedResponse.states[i][9];
+              true_track = apiContinuedResponse.states[i][10];
+              vertical_rate = apiContinuedResponse.states[i][11];
+              sensors = apiContinuedResponse.states[i][12];
+              geo_altitude = apiContinuedResponse.states[i][13];
+              squawk = apiContinuedResponse.states[i][14];
+              spi = apiContinuedResponse.states[i][15];
+              position_source = apiContinuedResponse.states[i][16];
+
+              newData = [icao24, callsign, origin_country, time_position, last_contact,
+                  longitude, latitude, baro_altitude, on_ground, velocity,
+                  true_track, vertical_rate, sensors, geo_altitude, squawk,
+                  spi, position_source];
+
+              newArray.push(newData);
+          }
+        }
+
+        continuedResponseAPIData = {time, newArray};
+
+        response.status(200).json({
+          message: "Response received",
+          body: continuedResponseAPIData
+        });
+
+      });
+
+  }).on('error', function(e){
+        console.log("Second POST method got an error: ", e);
+  });
+
 }); // End of post method
 
 // Create Server ---------------------------------------------------------------

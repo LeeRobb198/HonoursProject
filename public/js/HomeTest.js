@@ -1,42 +1,25 @@
-// Plane Layer
+var timeOutInitialFlights;
 
-var planeLayer = L.layerGroup().addTo(map);
+var clearFlagInitialFlights = true;
 
-var valuesArray = [];
+initialData();
 
-// Refresh Data Function -------------------------------------------------------
+timeOutInitialFlights = setInterval(initialData, 10000);
 
-async function refreshData() {
+async function initialData() {
 
-  if (clearFlag == true) {
-
-    // Get chosen country from dropdown
-    var cc = document.getElementById("countrySelection");
-    var chosenCountry = cc.options[cc.selectedIndex].value;
-
-    // Check if plane is grounded
-    var onGround = document.getElementById("onGroundCheck").checked;
-
-    // Get minimum slider value
-    var minSlider = document.getElementById("minSlider").value;
-
-    // Get maximum slider value
-    var maxSlider = document.getElementById("maxSlider").value;
-
-    // Array to be sent to server
-    var flightRequestData = {chosenCountry, onGround, minSlider, maxSlider};
+  if (clearFlagInitialFlights == true) {
 
     // Content to be sent to server
     var options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(flightRequestData)
+      }
     }
 
     // Sends request to server
-    var response = await fetch('/apiSpecificRequest', options);
+    var response = await fetch('/apiContinuedRequest', options);
 
     var data = await response.json();
 
@@ -176,13 +159,8 @@ async function refreshData() {
         });
       }
 
-    } else {
-      let overlayPopupDiv = document.querySelector(".popupDiv");
-      overlayPopupDiv.style.display = "block";
-      clearFlag = false;
     }
-
   } else {
-    console.log("Clear Flag is set false stop!");
+    console.log("Clear Flag for Initial Flights is set false stop!");
   };
 };

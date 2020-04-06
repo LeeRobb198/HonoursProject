@@ -19,7 +19,7 @@ $("#arPageButton").click(function(){
   var lastUpdateValue = valuesArray[11];
 
   var queryString = "?paraLatitude=" + latitude + "&paraLongitude=" + longitude +
-                    "&paraRotation=" + rotation + "&paraCallSign=" + callSignValue + 
+                    "&paraRotation=" + rotation + "&paraCallSign=" + callSignValue +
                     "&paraCountry=" + countryValue + "&paraGroundSpeed=" + groundSpeedValue +
                     "&paraAltitude=" + altitudeValue + "&paraIcao=" + icaoValue +
                     "&paraDataSource=" + dataSourceValue + "&paraOnGround=" + onGroundValue +
@@ -37,6 +37,7 @@ var clearFlag;
 $("#searchFlightsButton").click(function(){
   console.log("Click registered search button");
   clearFlag = true;
+  clearFlagInitialFlights = false;
   refreshData();
   timeOut = setInterval(refreshData, 10000);
 });
