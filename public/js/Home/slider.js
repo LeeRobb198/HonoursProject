@@ -1,4 +1,8 @@
-// Min Slider
+/* -------------------------------------------------------------------------- */
+/* Slider JS ---------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+// Min Slider ------------------------------------------------------------------
 
 var minSlider = document.getElementById("minSlider");
 var minOutput = document.getElementById("minValue");
@@ -8,7 +12,7 @@ minSlider.oninput = function() {
   minOutput.innerHTML = this.value;
 }
 
-// Max Slider
+// Max Slider ------------------------------------------------------------------
 
 var maxSlider = document.getElementById("maxSlider");
 var maxOutput = document.getElementById("maxValue");

@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Functionality JS --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 // Plane Layer
 
 var planeLayer = L.layerGroup().addTo(map);
@@ -177,7 +181,7 @@ async function refreshData() {
       }
 
     } else {
-      let overlayPopupDiv = document.querySelector(".popupDiv");
+      let overlayPopupDiv = document.querySelector(".popupFlightsDiv");
       overlayPopupDiv.style.display = "block";
       clearFlag = false;
     }

@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Initial Flights JS ------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 var timeOutInitialFlights;
 
 var clearFlagInitialFlights = true;
@@ -19,7 +23,7 @@ async function initialData() {
     }
 
     // Sends request to server
-    var response = await fetch('/apiContinuedRequest', options);
+    var response = await fetch('/apiInitialRequest', options);
 
     var data = await response.json();
 
@@ -158,9 +162,6 @@ async function initialData() {
           }
         });
       }
-
     }
-  } else {
-    console.log("Clear Flag for Initial Flights is set false stop!");
-  };
+  }
 };

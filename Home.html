@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- Title -->
-    <title> Flight Tracking Test Web App </title>
+    <title> Flight Detector </title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/Home/Home.css">
@@ -358,11 +358,11 @@
     <!-- Additional Content --------------------------------------------------->
 
     <!-- Pop-up No Flights -->
-    <div class="popupDiv" style="display: none;">
-      <div class="popupTitle">
+    <div class="popupFlightsDiv" style="display: none;">
+      <div class="popupFlightsTitle">
         No Flights!
       </div>
-      <button id="popupExitButton" onclick="togglePopupExit()">
+      <button id="popupExitButton" onclick="togglePopupFlightsExit()">
         <img class="popupExitIconSize" src="/images/exit-icon.svg">
       </button>
       <div class="popupInnerDiv">
@@ -371,16 +371,29 @@
       </div>
     </div>
 
+    <!-- Pop-up Please Select Flight For AR -->
+    <div class="popupARDiv" style="display: none;">
+      <div class="popupARTitle">
+        Select a Flight!
+      </div>
+      <button id="popupExitButton" onclick="togglePopupARExit()">
+        <img class="popupExitIconSize" src="/images/exit-icon.svg">
+      </button>
+      <div class="popupInnerDiv">
+        <br> Before using the AR feature please select a flight to track.
+      </div>
+    </div>
+
     <!-- Scripts -------------------------------------------------------------->
 
-    <script src="/js/Buttons.js"></script>
-    <script src="/js/Map.js"></script>
-    <script src="/js/Functionality.js"></script>
-    <script src="/js/HomeTest.js"></script>
-    <script src="/js/OverlayFunctions.js"></script>
-    <script src="/js/RotatedMarker.js"></script>
-    <script src="/js/SelectMenu.js"></script>
-    <script src="/js/slider.js"></script>
+    <script src="/js/Home/Buttons.js"></script>
+    <script src="/js/Home/Map.js"></script>
+    <script src="/js/Home/Functionality.js"></script>
+    <script src="/js/Home/InitialFlights.js"></script>
+    <script src="/js/Home/OverlayFunctions.js"></script>
+    <script src="/js/Home/RotatedMarker.js"></script>
+    <script src="/js/Home/SelectMenu.js"></script>
+    <script src="/js/Home/slider.js"></script>
 
   </body>
 </html>

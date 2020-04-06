@@ -2,17 +2,6 @@
 /* Pop-up ------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-.popupDiv {
-  position: absolute;
-  background: #407099;
-  top: 30%;
-  left: 25%;
-  right: 25%;
-  width: 50%;
-  height: 180px;
-  z-index: 2;
-}
-
 .popupInnerDiv {
   position: absolute;
   background: #B8DEFF;
@@ -26,9 +15,40 @@
   text-align: center;
 }
 
-.popupTitle {
+/* No Flights Popup */
+.popupFlightsDiv {
+  position: absolute;
+  background: #407099;
+  top: 30%;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+  height: 180px;
+  z-index: 2;
+}
+
+.popupFlightsTitle {
   color: #B8DEFF;
   font-size: 25px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+/* AR Popup */
+.popupARDiv {
+  position: absolute;
+  background: #407099;
+  top: 30%;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+  height: 180px;
+  z-index: 2;
+}
+
+.popupARTitle {
+  color: #B8DEFF;
+  font-size: 20px;
   padding-top: 10px;
   padding-left: 20px;
 }

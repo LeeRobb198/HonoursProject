@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Overlay Functions JS ----------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 // Search Overlay --------------------------------------------------------------
 
 function toggleSearchOverlay() {
@@ -26,11 +30,18 @@ function toggleSearchExit() {
   }
 }
 
-// Pop-up Overlay --------------------------------------------------------------
+// Pop-up No Flights Overlay --------------------------------------------------------------
 
-function togglePopupExit() {
-  let overlayPopupDiv = document.querySelector(".popupDiv");
-  overlayPopupDiv.style.display = "none";
+function togglePopupFlightsExit() {
+  let overlayPopupFlightsDiv = document.querySelector(".popupFlightsDiv");
+  overlayPopupFlightsDiv.style.display = "none";
+}
+
+// Pop-up AR Overlay --------------------------------------------------------------
+
+function togglePopupARExit() {
+  let overlayPopupARDiv = document.querySelector(".popupARDiv");
+  overlayPopupARDiv.style.display = "none";
 }
 
 // Flight Data Overlay ---------------------------------------------------------

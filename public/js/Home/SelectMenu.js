@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Select Menu JS ----------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 var x, i, j, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("dropdownCountries");

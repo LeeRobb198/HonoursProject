@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Rotated Marker JS -------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 (function() {
     // Save original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
