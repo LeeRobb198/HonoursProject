@@ -1,0 +1,63 @@
+/* .select-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+} */
+
+/* .select-box .options-container {
+  background: #6bc6ff;
+  color: #407099;
+  font-size: 12px;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+
+  order: 1; */
+}
+
+/* .selected {
+  background: #6BBAFF;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #407099;
+  position: relative;
+  order: 0;
+} */
+
+/* .select-box .options-container.active {
+  max-height: 75px;
+  opacity: 1;
+  overflow-y: scroll;
+} */
+
+/* Scroll container */
+/* .select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+} */
+
+/* Scroll handle */
+/* .select-box .options-container::-webkit-scrollbar-thumb {
+  background: #407099;
+  border-radius: 0 4px 4px 0;
+} */
+
+/* Size of Div */
+/* .select-box .option,
+.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+} */
+
+/* .select-box .option:hover {
+  background: #414b57;
+} */
+
+
+/* Hides original select box */
+/* .select-box .option .radio {
+  display: none;
+} */
