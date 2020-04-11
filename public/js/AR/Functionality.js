@@ -55,10 +55,10 @@ window.onload = () => {
   // Get current user location
   return navigator.geolocation.getCurrentPosition(function (position) {
 
-                  const latitude = queryArray[0];
-                  // const latitude = 57.147207;
-                  const longitude = queryArray[1];
-                  // const longitude = -2.262002;
+                  // const latitude = queryArray[0];
+                  const latitude = 57.147207;
+                  // const longitude = queryArray[1];
+                  const longitude = -2.262002;
 
                   // Create flight image
                   const icon = document.createElement('a-image');
