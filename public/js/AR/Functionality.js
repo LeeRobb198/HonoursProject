@@ -63,7 +63,7 @@ window.onload = () => {
                   // Create flight image
                   const icon = document.createElement('a-image');
                   icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                  icon.setAttribute('src', './public/images/redBox.png');
+                  icon.setAttribute('src', './public/images/PlaneARIcon.svg');
                   // icon.setAttribute('position', '0 100 0');
 
                   // For testing purposes scale according to distance

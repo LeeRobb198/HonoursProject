@@ -31,7 +31,7 @@ function onLocationFound(e) {
 		// Two decimal points
 		var twoDecRadius = (Math.round(radius * 100) / 100);
 
-    L.marker(e.latlng).addTo(map)
+		L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + twoDecRadius + " meters from this point").openPopup();
 
     L.circle(e.latlng, radius, {
