@@ -2,69 +2,110 @@
 /* Countries Dropdown ------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-.dropdownCountries {
-  position: relative;
-  margin: auto;
-  background-color: #407099;
-  width: 200px;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  font-size: 15px;
-  font-weight: bold;
+.custom-select-wrapper {
+     position: relative;
+     user-select: none;
+     margin: auto;
+     width: 200px;
+     height: 100%;
+     font-size: 15px;
+     font-weight: bold;
 }
 
-/* Hides original SELECT element */
-.dropdownCountries select {
-  display: none;
+ .custom-select {
+     position: relative;
+     display: flex;
+     flex-direction: column;
 }
 
-.country-selected {
-  background-color: #6BBAFF;
+ .custom-select__trigger {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 12px 16px;
+     color: #407099;
+     background: #6BBAFF;
+     cursor: pointer;
 }
 
-/* Style the arrow inside the select element */
-.country-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #407099 transparent transparent transparent;
+ .custom-options {
+     position: absolute;
+     display: block;
+     top: 100%;
+     left: 0;
+     right: 0;
+     background: #6bc6ff;
+     transition: all 0.5s;
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+     overflow-y: scroll;
+     max-height: 150px;
+     z-index: 2;
 }
 
-/* Point the arrow upwards when the select box is open (active): */
-.country-selected.arrow-active:after {
-  border-color: transparent transparent #407099 transparent;
-  top: 7px;
+ .custom-select.open .custom-options {
+     opacity: 1;
+     visibility: visible;
+     pointer-events: all;
 }
 
-/* style the items (options), including the selected item: */
-.country-items div,.country-selected {
-  color: #407099;
-  padding: 12px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
+ .custom-option {
+     position: relative;
+     display: block;
+     padding: 12px 16px;
+     font-size: 15px;
+     color: #407099;
+     cursor: pointer;
+     transition: all 0.5s;
 }
 
-/* Style items (options): */
-.country-items {
-  position: absolute;
-  background-color: #6bc6ff;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
+ /* .custom-option:hover {
+     cursor: pointer;
+     background-color: #b2b2b2;
+} */
+
+ .custom-option.selected {
+     color: #407099;
+     background-color: #6bc6ff;
 }
 
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
+.arrow {
+     position: relative;
+     height: 15px;
+     width: 15px;
 }
 
-.country-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+ .arrow::before, .arrow::after {
+     content: "";
+     position: absolute;
+     bottom: 0px;
+     width: 0.15rem;
+     height: 100%;
+     transition: all 0.5s;
+}
+
+ .arrow::before {
+     left: -5px;
+     transform: rotate(45deg);
+     background-color: #407099;
+     border: 2px solid #407099;
+}
+
+ .arrow::after {
+     left: 5px;
+     transform: rotate(-45deg);
+     background-color: #407099;
+     border: 2px solid #407099;
+}
+
+ .open .arrow::before {
+     left: -5px;
+     transform: rotate(-45deg);
+}
+
+ .open .arrow::after {
+     left: 5px;
+     transform: rotate(45deg);
 }

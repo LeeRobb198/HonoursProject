@@ -14,9 +14,8 @@ async function refreshData() {
 
   if (clearFlag == true) {
 
-    // Get chosen country from dropdown
-    var cc = document.getElementById("countrySelection");
-    var chosenCountry = cc.options[cc.selectedIndex].value;
+    // Get chosen country
+    var chosenCountry = document.querySelector('.custom-select__trigger span').textContent;
 
     // Check if plane is grounded
     var onGround = document.getElementById("onGroundCheck").checked;

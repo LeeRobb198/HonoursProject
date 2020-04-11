@@ -8,7 +8,7 @@ module.exports = function(app){
   app.post('/apiSpecificRequest', function(request, response)  {
     // Test - Returns the array from client
     console.log("\nRequest body from client: ");
-    console.log(request.body);
+    // console.log(request.body);
 
     // Search criteria for API sent by client
     var chosenCountry = request.body.chosenCountry;
@@ -23,10 +23,29 @@ module.exports = function(app){
     console.log(maxSlider);
     console.log(onGround);
 
+    // Input Sanitation --------------------------------------------------------
+
+    countryArray = ["Brunei", "Iran", "Laos", "Libya", "Moldova", "Netherlands",
+                    "North Macedonia", "Russia", "South Korea", "Syria", "Tanzania"]
+
+    fullCountryArray = {"Brunei": "Brunei Darussalam", "Iran": "Islamic Republic of Iran",
+                        "Laos": "Lao People's Democratic Republic", "Libya": "Libyan Arab Jamahiriya",
+                        "Moldova": "Republic of Moldova", "Netherlands": "Kingdom of the Netherlands",
+                        "North Macedonia": "The former Yugoslav Republic of Macedonia",
+                        "Russia": "Russian Federation", "South Korea":"Republic of Korea",
+                        "Syria": "Syrian Arab Republic", "Tanzania": "United Republic of Tanzania"};
+
+    for (var i = 0; i < countryArray.length; i++) {
+      if (countryArray[i] == chosenCountry) {
+        chosenCountry = fullCountryArray[countryArray[i]];
+        console.log(chosenCountry);
+      }
+    }
+
     // URL
     var url = "https://opensky-network.org/api/states/all";
 
-    // Response to server --------------------------------------------------------
+    // Response to server ------------------------------------------------------
 
     https.get(url, function(res){
 
@@ -69,6 +88,16 @@ module.exports = function(app){
                 squawk = apiResponse.states[i][14];
                 spi = apiResponse.states[i][15];
                 position_source = apiResponse.states[i][16];
+
+                // Country Shortened -------------------------------------------
+
+                for (var j = 0; j < countryArray.length; j++) {
+                  if (apiResponse.states[i][2] == fullCountryArray[countryArray[j]]) {
+                    origin_country = countryArray[j];
+                  }
+                }
+
+                // New Data ----------------------------------------------------
 
                 newData = [icao24, callsign, origin_country, time_position, last_contact,
                     longitude, latitude, baro_altitude, on_ground, velocity,
