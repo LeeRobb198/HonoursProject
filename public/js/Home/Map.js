@@ -37,7 +37,7 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius, {
 			color: '#407099',
 			fillColor: '#B8DEFF',
-    fillOpacity: 0.2
+    	fillOpacity: 0.2
 	}).addTo(map);
 }
 
@@ -47,6 +47,9 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// Add marker for AR element
+L.marker([57.167843, -2.286872]).addTo(map)
 
 // Icon ------------------------------------------------------------------------
 
