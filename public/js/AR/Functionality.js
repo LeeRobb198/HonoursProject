@@ -67,7 +67,7 @@ window.onload = () => {
                   // icon.setAttribute('position', '0 100 0');
 
                   // For testing purposes scale according to distance
-                  icon.setAttribute('scale', '50, 50');
+                  icon.setAttribute('scale', '25, 25');
 
                   // Add flight image to scene
                   scene.appendChild(icon);
