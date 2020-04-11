@@ -49,7 +49,7 @@ map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
 // Add marker for AR element
-L.marker([57.167843, -2.286872]).addTo(map)
+L.marker([57.149092, -2.123048]).addTo(map)
 
 // Icon ------------------------------------------------------------------------
 
