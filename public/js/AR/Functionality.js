@@ -57,10 +57,12 @@ window.onload = () => {
 
                   // const latitude = queryArray[0];
                   // const latitude = 57.155243; // House
-                  const latitude = 57.167843; //North-East Westhill
+                  // const latitude = 57.167843; //North-East Westhill
+                  const latitude = 57.149092; //North Fatima
                   // const longitude = queryArray[1];
                   // const longitude = -2.296723; // House
-                  const longitude = -2.286872; // North-East Westhill
+                  // const longitude = -2.286872; // North-East Westhill
+                  const longitude = -2.123048; // North Fatima
 
                   // Create flight image
                   const icon = document.createElement('a-image');
