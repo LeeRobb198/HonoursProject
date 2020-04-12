@@ -58,7 +58,7 @@ map.on('locationerror', onLocationError);
 var latitudeTest = 57.164314;
 var longitudeTest = -2.311392;
 
-L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test popup at latitude " + latitudeTest + "& longitude " + longitudeTest);
+L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test AR location at latitude " + latitudeTest + "& longitude " + longitudeTest);
 
 
 
