@@ -56,8 +56,8 @@ window.onload = () => {
   return navigator.geolocation.getCurrentPosition(function (position) {
 
                   // Selected Flight
-                  // const latitude = queryArray[0];
-                  // const longitude = queryArray[1];
+                  const latitude = queryArray[0];
+                  const longitude = queryArray[1];
                   // House
                   // const latitude = 57.155243;
                   // const longitude = -2.296723;
@@ -71,8 +71,8 @@ window.onload = () => {
                   // const latitude = 57.164314;
                   // const longitude = -2.311392;
                   // West Calum
-                  const latitude = 57.124637;
-                  const longitude = -2.099873;
+                  // const latitude = 57.124637;
+                  // const longitude = -2.099873;
 
                   // Create flight image
                   const icon = document.createElement('a-image');
@@ -81,7 +81,8 @@ window.onload = () => {
                   // icon.setAttribute('position', '0 100 0');
 
                   // For testing purposes scale according to distance
-                  icon.setAttribute('scale', '500, 500');
+                  // icon.setAttribute('scale', '500, 500');
+                  icon.setAttribute('scale', '1000, 1000');
 
                   // Add flight image to scene
                   scene.appendChild(icon);

@@ -58,10 +58,10 @@ map.on('locationerror', onLocationError);
 // var latitudeTest = 57.164314;
 // var longitudeTest = -2.311392;
 // Add marker for AR element West Calum
-var latitudeTest = 57.124637;
-var longitudeTest = -2.099873;
+// var latitudeTest = 57.124637;
+// var longitudeTest = -2.099873;
 
-L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test AR location at latitude " + latitudeTest + " & longitude " + longitudeTest);
+// L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test AR location at latitude " + latitudeTest + " & longitude " + longitudeTest);
 
 
 
