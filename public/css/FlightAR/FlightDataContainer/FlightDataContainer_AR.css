@@ -4,11 +4,13 @@
 
 .flightData_container_AR {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0%;
   width: 100%;
   height: 200px;
   -webkit-transition: .3s; /* 0.3 seconds transition on hover */
-  z-index: 2;
+  z-index: 99;
 }
 
 .flightData_upper_container_AR {
