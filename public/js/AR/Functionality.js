@@ -55,16 +55,24 @@ window.onload = () => {
   // Get current user location
   return navigator.geolocation.getCurrentPosition(function (position) {
 
+                  // Selected Flight
                   // const latitude = queryArray[0];
-                  // const latitude = 57.155243; // House
-                  // const latitude = 57.167843; //North-East Westhill
-                  const latitude = 57.149092; // North Fatima
-                  // const latitude = 57.164314; // North-West Mark
                   // const longitude = queryArray[1];
-                  // const longitude = -2.296723; // House
-                  // const longitude = -2.286872; // North-East Westhill
-                  const longitude = -2.123048; // North Fatima
-                  // const longitude = -2.311392; // North-West Mark
+                  // House
+                  // const latitude = 57.155243;
+                  // const longitude = -2.296723;
+                  // North-East Westhill
+                  // const latitude = 57.167843;
+                  // const longitude = -2.286872;
+                  // North Fatima
+                  // const latitude = 57.149092;
+                  // const longitude = -2.123048;
+                  // North-West Mark
+                  // const latitude = 57.164314;
+                  // const longitude = -2.311392;
+                  // West Calum
+                  const latitude = 57.124637;
+                  const longitude = -2.099873;
 
                   // Create flight image
                   const icon = document.createElement('a-image');
