@@ -11,10 +11,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 	maxZoom: 18
 }).addTo(map);
 
-// Add compass
-
-map.addControl( new L.Control.Compass() );
-
 // Ensures user cannot go outwidth bounds of map -------------------------------
 
 var southWest = L.latLng(-89.98155760646617, -180),
