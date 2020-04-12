@@ -49,11 +49,16 @@ map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
 // Add marker for AR element North-East Westhill
-// L.marker([57.167843, -2.286872]).addTo(map);
+// var latitudeTest = 57.167843;
+// var longitudeTest = -2.286872;
 // Add marker for AR element North Fatima
-// L.marker([57.149092, -2.123048]).addTo(map);
+// var latitudeTest = 57.149092;
+// var longitudeTest = -2.123048;
 // Add marker for AR element North-West Mark
-L.marker([57.164314, -2.311392]).addTo(map);
+var latitudeTest = 57.164314;
+var longitudeTest = -2.311392;
+
+L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test popup at latitude " + latitudeTest + "& longitude " + longitudeTest);
 
 
 
