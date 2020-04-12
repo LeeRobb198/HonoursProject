@@ -48,10 +48,10 @@ body {
 
 .arElement {
   position: absolute;
-  top: 100px;
+  top: 75px;
   left: 0;
   right: 0;
-  /* background-color: yellow; */
+  background-color: yellow;
   width: 100%;
-  height: 30%;
+  height: 60%;
 }
