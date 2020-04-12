@@ -52,11 +52,11 @@ map.on('locationerror', onLocationError);
 // var latitudeTest = 57.167843;
 // var longitudeTest = -2.286872;
 // Add marker for AR element North Fatima
-// var latitudeTest = 57.149092;
-// var longitudeTest = -2.123048;
+var latitudeTest = 57.149092;
+var longitudeTest = -2.123048;
 // Add marker for AR element North-West Mark
-var latitudeTest = 57.164314;
-var longitudeTest = -2.311392;
+// var latitudeTest = 57.164314;
+// var longitudeTest = -2.311392;
 
 L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test AR location at latitude " + latitudeTest + " & longitude " + longitudeTest);
 
