@@ -277,10 +277,10 @@
 
         <div id="searchParameters">
           <div class="altitudeTitle">
-            <br> Minimum Altitude: <span id="minValue"></span> ft <br>
+            <br> Minimum Altitude: <span id="minValue"> 0 </span> ft <br>
           </div>
           <div class="slidecontainer">
-            <input type="range" min="0" max="40000" value="0" class="slider" id="minSlider">
+            <input type="range" min="0" max="40000" value="0" class="slider" id="minSlider" onchange="updateMinInput(this.value);">
           </div>
         </div>
 
@@ -288,10 +288,10 @@
 
         <div id="searchParameters">
           <div class="altitudeTitle">
-            <br> Maximum Altitude: <span id="maxValue"></span> ft <br>
+            <br> Maximum Altitude: <span id="maxValue"> 40000 </span> ft <br>
           </div>
           <div class="slidecontainer">
-            <input type="range" min="0" max="40000" value="40000" class="slider" id="maxSlider">
+            <input type="range" min="0" max="40000" value="40000" class="slider" id="maxSlider" onchange="updateMaxInput(this.value);">
           </div>
         </div>
 
