@@ -40,12 +40,13 @@ $("#arPageButton").click(function(){
 
       window.location.href = "FlightAR.html" + queryString;
     } else {
+      // Zooms to outer circle
+      map.flyTo(userLocation, 10.5);
+
       let overlayPopupARDiv = document.querySelector(".popupARDiv");
       overlayPopupARDiv.style.display = "block";
     }
   } else {
-    map.panTo(userLocation);
-
     let overlayPopupARDiv = document.querySelector(".popupARDiv");
     overlayPopupARDiv.style.display = "block";
   }
