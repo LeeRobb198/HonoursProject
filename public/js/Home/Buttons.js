@@ -13,8 +13,8 @@ $("#arPageButton").click(function(){
     planeLatitude = valuesArray[0];
     planeLongitude = valuesArray[1];
 
-    // distanceBetweenPoints = userLocation.distanceTo([planeLatitude, planeLongitude]).toFixed(0);
-    distanceBetweenPoints = userLocation.distanceTo([latitudeTest, longitudeTest]).toFixed(0);
+    distanceBetweenPoints = userLocation.distanceTo([planeLatitude, planeLongitude]).toFixed(0);
+    // distanceBetweenPoints = userLocation.distanceTo([latitudeTest, longitudeTest]).toFixed(0);
 
     if (distanceBetweenPoints < 10500) {
 
@@ -38,7 +38,7 @@ $("#arPageButton").click(function(){
                         "&paraDataSource=" + dataSourceValue + "&paraOnGround=" + onGroundValue +
                         "&paraVerticalRate=" + verticalRateValue + "&paraLastUpdate=" + lastUpdateValue;
 
-      window.location.href = "FlightAR.html" + queryString;
+      // window.location.href = "FlightAR.html" + queryString;
     } else {
       let overlayPopupARDiv = document.querySelector(".popupARDiv");
       overlayPopupARDiv.style.display = "block";
