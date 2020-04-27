@@ -2,6 +2,9 @@
 /* Slider JS ---------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
+console.log("Test slider");
+
+
 // Min Slider ------------------------------------------------------------------
 
 // var minSlider = document.getElementById("minSlider");
@@ -12,11 +15,11 @@
 //   minOutput.innerHTML = this.value;
 // }
 
-function updateMinInput(val) {
-
-  var minSlider = document.getElementById("minSlider").value;
-  document.getElementById("minValue").innerHTML = minSlider;
-}
+// function updateMinInput(val) {
+//
+//   var minSlider = document.getElementById("minSlider").value;
+//   document.getElementById("minValue").innerHTML = minSlider;
+// }
 
 // Max Slider ------------------------------------------------------------------
 
@@ -28,8 +31,8 @@ function updateMinInput(val) {
 //   maxOutput.innerHTML = this.value;
 // }
 
-function updateMaxInput(val) {
-
-  var maxSlider = document.getElementById("maxSlider").value;
-  document.getElementById("maxValue").innerHTML = maxSlider;
-}
+// function updateMaxInput(val) {
+//
+//   var maxSlider = document.getElementById("maxSlider").value;
+//   document.getElementById("maxValue").innerHTML = maxSlider;
+// }
