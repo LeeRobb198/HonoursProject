@@ -277,10 +277,10 @@
 
         <div id="searchParameters">
           <div class="altitudeTitle">
-            <br> Minimum Altitude: <span id="minValue"> 0 </span> ft <br>
+            <br> Minimum Altitude: <span id="minValue"></span> ft <br>
           </div>
           <div class="slidecontainer">
-            <input type="range" min="0" max="40000" value="0" class="slider" id="minSlider" onchange="updateMinInput(this.value);">
+            <input type="range" min="0" max="40000" value="0" class="slider" id="minSlider">
           </div>
         </div>
 
@@ -288,10 +288,10 @@
 
         <div id="searchParameters">
           <div class="altitudeTitle">
-            <br> Maximum Altitude: <span id="maxValue"> 40000 </span> ft <br>
+            <br> Maximum Altitude: <span id="maxValue"> </span> ft <br>
           </div>
           <div class="slidecontainer">
-            <input type="range" min="0" max="40000" value="40000" class="slider" id="maxSlider" onchange="updateMaxInput(this.value);">
+            <input type="range" min="0" max="40000" value="40000" class="slider" id="maxSlider">
           </div>
         </div>
 
@@ -393,7 +393,6 @@
 
     <!-- Scripts -------------------------------------------------------------->
 
-    <script src="/js/slider.js"></script>
     <script src="/js/Home/Buttons.js"></script>
     <script src="/js/Home/Map.js"></script>
     <script src="/js/Home/Functionality.js"></script>
@@ -401,7 +400,7 @@
     <script src="/js/Home/OverlayFunctions.js"></script>
     <script src="/js/Home/RotatedMarker.js"></script>
     <script src="/js/Home/Dropdown.js"></script>
-    <!-- <script src="/js/Home/Slider.js"></script> -->
+    <script src="/js/Home/slider.js"></script>
 
   </body>
 </html>
