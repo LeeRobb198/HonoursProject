@@ -1,0 +1,94 @@
+/* -------------------------------------------------------------------------- */
+/* Information CSS ---------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+body {
+  font-family: Arial;
+  color: #41719a;
+  margin: 0;
+  background: #d9e8eb;
+}
+
+/* Header/Logo Title -------------------------------------------------------- */
+
+.header {
+  width: 100%;
+  height: 15%;
+  z-index: 2;
+  position: absolute;
+}
+
+.headerImage {
+  width: 100%;
+  height: 100%;
+}
+
+/* Button ------------------------------------------------------------------- */
+
+.backButtonStyle {
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  width: 40px;
+  height: 40px;
+  background-color: #407099;
+  border: 2px solid #407099;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+}
+
+.iconSize {
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Title --------------------------------------------------------------- */
+
+.infoTitle {
+  font-size: 23px;
+  margin: 0;
+}
+
+.mainContent {
+  position: absolute;
+  top: 16%;
+  margin-left: 5%;
+  height: 100%;
+  width: 90%;
+}
+
+/* Search Info Container ---------------------------------------------------- */
+
+.searchContainer {
+  width: 100%;
+  margin-top: 0;
+  background: #bbddf6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerTitle {
+  font-size: 18px;
+  padding-top: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* AR Info Container -------------------------------------------------------- */
+
+.ARContainer {
+  width: 100%;
+  background: #bbddf6;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Text Content ------------------------------------------------------------- */
+
+.contentText {
+  font-size: 14px;
+  margin: 10px;
+  padding-bottom: 10px;
+}

@@ -73,3 +73,10 @@ $("#resetButton").click(function(){
   planeLayer.clearLayers();
   clearTimeout(timeOut);
 });
+
+// Info Button -----------------------------------------------------------------
+
+$("#infoButton").click(function(){
+  console.log("Click registered info button");
+  window.location.href = "Information.html"
+});

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <!------------------------------------------>
+  <!-- Head ------------------------------------------------------------------->
+  <!------------------------------------------>
+
+  <head>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+      <!-- Title -->
+      <title> Flight Detector </title>
+
+      <!-- Stylesheet -->
+      <link rel="stylesheet" href="/css/Information/Information.css">
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  </head>
+
+  <!------------------------------------------>
+  <!-- Body ------------------------------------------------------------------->
+  <!------------------------------------------>
+
+  <body>
+
+    <!-- Logo -->
+    <div class="header">
+      <button class="backButtonStyle" id="returnButton" type="submit">
+        <img class="iconSize" src="/images/back-arrow-icon.svg">
+      </button>
+      <img class="headerImage" src="/images/Header.png">
+    </div>
+
+    <section class="mainContent">
+      <h1 class="infoTitle"> How to use Flight Detector </h1>
+
+      <!-- Search Container Info ---------------------------------------------->
+
+      <section class="searchContainer">
+        <h1 class="containerTitle"> Search For Flights </h1>
+
+        <div class="contentText">
+          The application allows you to search for flights by clicking the search
+          button then entering the four following parameters:
+
+          <ol>
+            <li> Country of origin </li>
+            <li> Minimum altitude </li>
+            <li> Maximum altitude </li>
+            <li> If the plane is on the ground </li>
+          </ol>
+
+          Once you have entered the parameters, you can click the Search button
+          at the top of the search tab. All the flights meeting your search
+          criteria will display on the map.
+        </div>
+      </section>
+
+      <!-- AR Container Info -------------------------------------------------->
+
+      <section class="ARContainer">
+        <h1 class="containerTitle"> Track a Flight in AR </h1>
+
+        <div class="contentText">
+          The application allows you to select a flight from the map and track
+          it in AR. You must first choose a flight that is within the outer
+          circle of your location then click the AR button.
+
+          <br> <br>
+
+          Once you have clicked the AR button, the browser will ask you to allow
+          Flight Detector to use your location. You should see the icon as you
+          rotate on the spot.
+
+          <br><br>
+
+          Don't worry if you can't see it! Just make sure to allow the application
+          to access your motion and orientation. You can do that by clicking on
+          the screen, once the camera visual has loaded, and a popup will display
+          asking you for permission.
+        </div>
+
+      </section>
+    </section>
+
+    <!-- Scripts -------------------------------------------------------------->
+
+    <script src="/js/FlightAR/Buttons.js"></script>
+
+  </body>
+</html>
