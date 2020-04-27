@@ -38,7 +38,7 @@ $("#arPageButton").click(function(){
                         "&paraDataSource=" + dataSourceValue + "&paraOnGround=" + onGroundValue +
                         "&paraVerticalRate=" + verticalRateValue + "&paraLastUpdate=" + lastUpdateValue;
 
-      // window.location.href = "FlightAR.html" + queryString;
+      window.location.href = "FlightAR.html" + queryString;
     } else {
       let overlayPopupARDiv = document.querySelector(".popupARDiv");
       overlayPopupARDiv.style.display = "block";
