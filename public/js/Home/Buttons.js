@@ -44,8 +44,8 @@ $("#arPageButton").click(function(){
       overlayPopupARDiv.style.display = "block";
     }
   } else {
-    map.locate({setView: true, maxZoom: 14});
-    
+    map.panTo(userLocation);
+
     let overlayPopupARDiv = document.querySelector(".popupARDiv");
     overlayPopupARDiv.style.display = "block";
   }
