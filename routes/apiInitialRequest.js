@@ -7,6 +7,18 @@ var https = require('https');
 module.exports = function(app){
   app.post('/apiInitialRequest', function(request, response)  {
 
+    // Input Sanitation --------------------------------------------------------
+
+    countryArray = ["Brunei", "Iran", "Laos", "Libya", "Moldova", "Netherlands",
+                    "North Macedonia", "Russia", "South Korea", "Syria", "Tanzania"]
+
+    fullCountryArray = {"Brunei": "Brunei Darussalam", "Iran": "Islamic Republic of Iran",
+                        "Laos": "Lao People's Democratic Republic", "Libya": "Libyan Arab Jamahiriya",
+                        "Moldova": "Republic of Moldova", "Netherlands": "Kingdom of the Netherlands",
+                        "North Macedonia": "The former Yugoslav Republic of Macedonia",
+                        "Russia": "Russian Federation", "South Korea":"Republic of Korea",
+                        "Syria": "Syrian Arab Republic", "Tanzania": "United Republic of Tanzania"};
+
     // URL
     var url = "https://opensky-network.org/api/states/all";
 
@@ -38,7 +50,6 @@ module.exports = function(app){
             if((apiInitialResponse.states[i][6] !== null && apiInitialResponse.states[i][5] !== null)) {
                 icao24 = apiInitialResponse.states[i][0];
                 callsign = apiInitialResponse.states[i][1];
-                origin_country = apiInitialResponse.states[i][2];
                 time_position = apiInitialResponse.states[i][3];
                 last_contact = apiInitialResponse.states[i][4];
                 longitude = apiInitialResponse.states[i][5];
@@ -54,6 +65,16 @@ module.exports = function(app){
                 spi = apiInitialResponse.states[i][15];
                 position_source = apiInitialResponse.states[i][16];
 
+                // Country Shortened -------------------------------------------
+
+                for (var j = 0; j < countryArray.length; j++) {
+                  if (apiInitialResponse.states[i][2] == fullCountryArray[countryArray[j]]) {
+                    origin_country = countryArray[j];
+                  }
+                }
+
+                // New Data ----------------------------------------------------
+                
                 newData = [icao24, callsign, origin_country, time_position, last_contact,
                     longitude, latitude, baro_altitude, on_ground, velocity,
                     true_track, vertical_rate, sensors, geo_altitude, squawk,

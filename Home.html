@@ -302,7 +302,7 @@
 
         <div class="onGroundContainer">
           <label class="onGroundParameter"> Search For Planes On The Ground
-            <input id="onGroundCheck" type="checkbox">
+            <input id="onGroundCheck" type="checkbox" onchange="updateSliders(this.value);">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -394,6 +394,7 @@
     <!-- Scripts -------------------------------------------------------------->
 
     <script src="/js/Home/Buttons.js"></script>
+    <script src="/js/Home/Checkbox.js"></script>
     <script src="/js/Home/Map.js"></script>
     <script src="/js/Home/Functionality.js"></script>
     <script src="/js/Home/InitialFlights.js"></script>

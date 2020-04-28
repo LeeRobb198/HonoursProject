@@ -61,6 +61,10 @@ var clearFlag;
 
 $("#searchFlightsButton").click(function(){
   console.log("Click registered search button");
+
+  // Zooms out showing entire map
+  map.flyTo(userLocation, 2, {duration: 1});
+
   clearFlag = true;
   clearFlagInitialFlights = false;
   refreshData();
