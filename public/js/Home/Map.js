@@ -2,6 +2,10 @@
 /* Map JS ------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
+// User Location coors
+
+var userLocation;
+
 // Creates map -----------------------------------------------------------------
 
 var map = L.map('map_2D', {minZoom: 2, maxBoundsViscosity: 1.0}).fitWorld();
@@ -13,8 +17,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 // Ensures user cannot go outwidth bounds of map -------------------------------
 
-var southWest = L.latLng(-89.98155760646617, -180),
-northEast = L.latLng(89.99346179538875, 180);
+var southWest = L.latLng(-89.98155760646617, -180), northEast = L.latLng(89.99346179538875, 180);
 var bounds = L.latLngBounds(southWest, northEast);
 
 map.setMaxBounds(bounds);
@@ -27,18 +30,29 @@ map.on('drag', function() {
 map.locate({setView: true, maxZoom: 16});
 
 function onLocationFound(e) {
-    var radius = e.accuracy;
-		// Two decimal points
-		var twoDecRadius = (Math.round(radius * 100) / 100);
+  var radius = e.accuracy;
+	// Two decimal points
+	var twoDecRadius = (Math.round(radius * 100) / 100);
 
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + twoDecRadius + " meters from this point").openPopup();
+	L.marker(e.latlng).addTo(map)
+  	.bindPopup("You are within " + twoDecRadius + " meters from this point").openPopup();
 
-    L.circle(e.latlng, radius, {
-			color: '#407099',
-			fillColor: '#B8DEFF',
-    fillOpacity: 0.2
+	// Location of user circle marker
+  L.circle(e.latlng, radius, {
+		color: '#407099',
+		fillColor: '#B8DEFF',
+  	fillOpacity: 0.25
 	}).addTo(map);
+
+	// Range of the AR (10500 metres) circle marker
+  L.circle(e.latlng, 10500, {
+		color: '#6BBAFF',
+		fillColor: '#6BBAFF',
+  	fillOpacity: 0.05
+	}).addTo(map);
+
+	// Add user location to global variable
+	userLocation = e.latlng;
 }
 
 function onLocationError(e) {
@@ -47,6 +61,12 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// Add test marker
+var latitudeTest = 57.212509;
+var longitudeTest = -2.164773;
+// L.marker([latitudeTest, longitudeTest]).addTo(map).bindPopup("Test AR location at latitude " + latitudeTest + " & longitude " + longitudeTest);
+
 
 // Icon ------------------------------------------------------------------------
 

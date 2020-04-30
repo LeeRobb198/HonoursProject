@@ -55,19 +55,21 @@ window.onload = () => {
   // Get current user location
   return navigator.geolocation.getCurrentPosition(function (position) {
 
+                  // Selected Flight
                   const latitude = queryArray[0];
-                  // const latitude = 57.147207;
                   const longitude = queryArray[1];
-                  // const longitude = -2.262002;
+
+                  // Test location
+                  // const latitude = 57.212509;
+                  // const longitude = -2.164773;
 
                   // Create flight image
                   const icon = document.createElement('a-image');
                   icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                  icon.setAttribute('src', './public/images/redBox.png');
-                  // icon.setAttribute('position', '0 100 0');
+                  icon.setAttribute('src', './public/images/PlaneARIcon.svg');
 
                   // For testing purposes scale according to distance
-                  icon.setAttribute('scale', '500, 500');
+                  icon.setAttribute('scale', '1000, 1000');
 
                   // Add flight image to scene
                   scene.appendChild(icon);

@@ -45,6 +45,9 @@
   <body>
     <!-- Logo -->
     <div class="header">
+      <button class="infoButtonStyle" id="infoButton" type="submit">
+        <img class="infoIconSize" src="/images/info-icon.svg">
+      </button>
       <img class="headerImage" src="/images/Header.png">
     </div>
 
@@ -93,13 +96,13 @@
           </div>
           <div class="custom-select-wrapper">
             <div class="custom-select">
-              <div class="custom-select__trigger"><span value="Test">United Kingdom</span>
+              <div class="custom-select__trigger"><span>United Kingdom</span>
                 <div class="arrow"></div>
               </div>
               <div class="custom-options">
                 <!-- Most Popular -->
                 <span class="custom-option selected">United Kingdom</span>
-                <span class="custom-option" value="United States Test">United States</span>
+                <span class="custom-option">United States</span>
                 <!-- A -->
                 <span class="custom-option">Afghanistan</span>
                 <span class="custom-option">Albania</span>
@@ -285,7 +288,7 @@
 
         <div id="searchParameters">
           <div class="altitudeTitle">
-            <br> Maximum Altitude: <span id="maxValue"></span> ft <br>
+            <br> Maximum Altitude: <span id="maxValue"> </span> ft <br>
           </div>
           <div class="slidecontainer">
             <input type="range" min="0" max="40000" value="40000" class="slider" id="maxSlider">
@@ -299,7 +302,7 @@
 
         <div class="onGroundContainer">
           <label class="onGroundParameter"> Search For Planes On The Ground
-            <input id="onGroundCheck" type="checkbox">
+            <input id="onGroundCheck" type="checkbox" onchange="updateSliders(this.value);">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -358,7 +361,7 @@
       </section>
     </section>
 
-    <!-- Additional Content --------------------------------------------------->
+    <!-- Pop-ups -------------------------------------------------------------->
 
     <!-- Pop-up No Flights -->
     <div class="popupFlightsDiv" style="display: none;">
@@ -383,13 +386,15 @@
         <img class="popupExitIconSize" src="/images/exit-icon.svg">
       </button>
       <div class="popupInnerDiv">
-        <br> Before using the AR feature please select a flight to track.
+        <br> Please select a flight to track within the AR range. <br>
+        <br> Only flights within the outer circle can be tracked.
       </div>
     </div>
 
     <!-- Scripts -------------------------------------------------------------->
 
     <script src="/js/Home/Buttons.js"></script>
+    <script src="/js/Home/Checkbox.js"></script>
     <script src="/js/Home/Map.js"></script>
     <script src="/js/Home/Functionality.js"></script>
     <script src="/js/Home/InitialFlights.js"></script>

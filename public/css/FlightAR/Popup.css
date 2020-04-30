@@ -5,54 +5,27 @@
 .popupInnerDiv {
   position: absolute;
   background: #B8DEFF;
-  padding-left: 3px;
-  padding-right: 3px;
-  width: 90%;
-  height: 70%;
-  top: 25%;
-  left: 5%;
-  right: 5%;
+  padding: 2px;
+  width: 260px;
+  height: 70px;
+  top: 5px;
+  left: 5px;
+  /* right: 5%; */
   color: #407099;
   font-size: 18px;
   text-align: center;
 }
 
 /* No Flights Popup */
-.popupFlightsDiv {
+.popupMotionOrDiv {
   position: absolute;
   background: #407099;
-  top: 30%;
-  left: 20%;
-  right: 20%;
-  width: 60%;
-  height: 210px;
+  top: 15%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 85px;
   z-index: 2;
-}
-
-.popupFlightsTitle {
-  color: #B8DEFF;
-  font-size: 25px;
-  padding-top: 10px;
-  padding-left: 20px;
-}
-
-/* AR Popup */
-.popupARDiv {
-  position: absolute;
-  background: #407099;
-  top: 35%;
-  left: 15%;
-  right: 15%;
-  width: 70%;
-  height: 200px;
-  z-index: 2;
-}
-
-.popupARTitle {
-  color: #B8DEFF;
-  font-size: 25px;
-  padding-top: 10px;
-  padding-left: 20px;
 }
 
 /* Button ------------------------------------------------------------------- */
@@ -66,14 +39,15 @@
   position: absolute;
   background-color: #407099;
   border: 2px solid #407099;
-  top: 7%;
-  right: 2%;
+  padding: 0;
+  top: 5px;
+  right: 5px;
 }
 
 #popupExitButton:hover {
   position: absolute;
   background-color: #487dab;
   border: 2px solid #487dab;
-  top: 7%;
-  right: 2%;
+  top: 5px;
+  right: 5px;
 }

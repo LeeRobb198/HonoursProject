@@ -14,6 +14,7 @@
 
       <!-- Stylesheet -->
       <link rel="stylesheet" href="/css/FlightAR/FlightAR.css">
+      <link rel="stylesheet" href="/css/FlightAR/Popup.css">
 
       <!-- Flight Data Container CSS -->
       <link rel="stylesheet" href="/css/FlightAR/FlightDataContainer/FlightDataContainer_AR.css">
@@ -44,7 +45,9 @@
       <img class="headerImage" src="/images/Header.png">
     </div>
 
-      <!-- A-Scene -------------------------------------------------------------->
+    <!-- A-Scene -------------------------------------------------------------->
+
+    <div class="arElement">
 
       <a-scene vr-mode-ui="enabled: false"
           embedded
@@ -53,6 +56,8 @@
           <a-camera gps-camera="minDistance: 0;" rotation-reader></a-camera>
 
   	  </a-scene>
+
+    </div>
 
     <!-- Flight Data Tab ------------------------------------------------------>
 
@@ -102,10 +107,22 @@
       </section>
     </section>
 
+    <!-- Motion and Orientation Pop-up ---------------------------------------->
+
+    <div class="popupMotionOrDiv" style="display: block;">
+      <button id="popupExitButton" onclick="togglePopupMotionOrExit()">
+        <img class="popupExitIconSize" src="/images/exit-icon.svg">
+      </button>
+      <div class="popupInnerDiv">
+        If the icon does not show accept Motion and Orientation by clicking the screen. <br>
+      </div>
+    </div>
+
     <!-- Scripts -------------------------------------------------------------->
 
-    <script src="/js/AR/Buttons.js"></script>
-    <script src="/js/AR/Functionality.js"></script>
+    <script src="/js/FlightAR/Buttons.js"></script>
+    <script src="/js/FlightAR/Functionality.js"></script>
+    <script src="/js/FlightAR/OverlayFunctions.js"></script>
 
   </body>
 </html>
