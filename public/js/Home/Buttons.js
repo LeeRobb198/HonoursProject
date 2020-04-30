@@ -44,7 +44,6 @@ $("#arPageButton").click(function(){
       let overlayPopupARDiv = document.querySelector(".popupARDiv");
       overlayPopupARDiv.style.display = "block";
     }
-  }
 
 });
 
