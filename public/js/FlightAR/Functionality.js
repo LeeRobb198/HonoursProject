@@ -59,10 +59,6 @@ window.onload = () => {
                   const latitude = queryArray[0];
                   const longitude = queryArray[1];
 
-                  // Test location
-                  // const latitude = 57.212509;
-                  // const longitude = -2.164773;
-
                   // Create flight image
                   const icon = document.createElement('a-image');
                   icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
