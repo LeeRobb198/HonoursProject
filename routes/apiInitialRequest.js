@@ -50,6 +50,7 @@ module.exports = function(app){
             if((apiInitialResponse.states[i][6] !== null && apiInitialResponse.states[i][5] !== null)) {
                 icao24 = apiInitialResponse.states[i][0];
                 callsign = apiInitialResponse.states[i][1];
+                origin_country = apiInitialResponse.states[i][2];
                 time_position = apiInitialResponse.states[i][3];
                 last_contact = apiInitialResponse.states[i][4];
                 longitude = apiInitialResponse.states[i][5];
@@ -74,7 +75,7 @@ module.exports = function(app){
                 }
 
                 // New Data ----------------------------------------------------
-                
+
                 newData = [icao24, callsign, origin_country, time_position, last_contact,
                     longitude, latitude, baro_altitude, on_ground, velocity,
                     true_track, vertical_rate, sensors, geo_altitude, squawk,
