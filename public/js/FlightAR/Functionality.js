@@ -60,8 +60,8 @@ window.onload = () => {
                   // const longitude = queryArray[1];
 
                   // Test location
-                  const latitude = 57.212509;
-                  const longitude = -2.164773;
+                  const latitude = 57.190286;
+                  const longitude = -2.193953;
 
                   // Create flight image
                   const icon = document.createElement('a-image');
