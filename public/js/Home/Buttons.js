@@ -10,11 +10,11 @@ $("#arPageButton").click(function(){
   if (Array.isArray(valuesArray) && valuesArray.length) {
 
     // Check flight selected is in range
-    planeLatitude = valuesArray[0];
-    planeLongitude = valuesArray[1];
+    // planeLatitude = valuesArray[0];
+    // planeLongitude = valuesArray[1];
 
-    distanceBetweenPoints = userLocation.distanceTo([planeLatitude, planeLongitude]).toFixed(0);
-    // distanceBetweenPoints = userLocation.distanceTo([latitudeTest, longitudeTest]).toFixed(0);
+    // distanceBetweenPoints = userLocation.distanceTo([planeLatitude, planeLongitude]).toFixed(0);
+    distanceBetweenPoints = userLocation.distanceTo([latitudeTest, longitudeTest]).toFixed(0);
 
     if (distanceBetweenPoints < 10500) {
 
