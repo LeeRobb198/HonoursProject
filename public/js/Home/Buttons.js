@@ -7,8 +7,6 @@
 $("#arPageButton").click(function(){
   console.log("Click registered AR button");
 
-  if (Array.isArray(valuesArray) && valuesArray.length) {
-
     // Check flight selected is in range
     // planeLatitude = valuesArray[0];
     // planeLongitude = valuesArray[1];
@@ -21,15 +19,15 @@ $("#arPageButton").click(function(){
       var latitude = valuesArray[0];
       var longitude = valuesArray[1];
       var rotation = valuesArray[2];
-      var callSignValue = valuesArray[3];
-      var countryValue = valuesArray[4];
-      var groundSpeedValue = valuesArray[5];
-      var altitudeValue = valuesArray[6];
-      var icaoValue = valuesArray[7];
-      var dataSourceValue = valuesArray[8];
-      var onGroundValue = valuesArray[9];
-      var verticalRateValue = valuesArray[10];
-      var lastUpdateValue = valuesArray[11];
+      var callSignValue = "LR 1998";
+      var countryValue = "United Kingdom";
+      var groundSpeedValue = "230";
+      var altitudeValue = "10000";
+      var icaoValue = "<Long-Number>";
+      var dataSourceValue = "ADS-B";
+      var onGroundValue = "false";
+      var verticalRateValue = "-5";
+      var lastUpdateValue = "<Get-A-Watch>";
 
       var queryString = "?paraLatitude=" + latitude + "&paraLongitude=" + longitude +
                         "&paraRotation=" + rotation + "&paraCallSign=" + callSignValue +
@@ -46,9 +44,6 @@ $("#arPageButton").click(function(){
       let overlayPopupARDiv = document.querySelector(".popupARDiv");
       overlayPopupARDiv.style.display = "block";
     }
-  } else {
-    let overlayPopupARDiv = document.querySelector(".popupARDiv");
-    overlayPopupARDiv.style.display = "block";
   }
 
 });
